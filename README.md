@@ -1,5 +1,7 @@
 # Wovser.AI Documentation Site
 
+[![pages-build-deployment](https://github.com/olaekdahl/wovser-docs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/olaekdahl/wovser-docs/actions/workflows/pages/pages-build-deployment)
+
 End-user documentation for Wovser.AI, built with [Nextra](https://nextra.site) (Next.js + MDX).
 
 ## Development
