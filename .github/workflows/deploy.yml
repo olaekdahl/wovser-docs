@@ -41,15 +41,34 @@ jobs:
 
       - name: Prepare static files
         run: |
+          # Determine export directory location
+          if [ -d ".next/export" ]; then
+            EXPORT_DIR=".next/export"
+          elif [ -d "out" ]; then
+            EXPORT_DIR="out"
+          else
+            # Fallback: create out from .next/static
+            echo "No export directory found, checking .next structure..."
+            ls -la .next/
+            exit 1
+          fi
+          
+          echo "Using export directory: $EXPORT_DIR"
+          
           # Copy public assets to export directory
-          cp -r public/* .next/export/ 2>/dev/null || true
+          cp -r public/* "$EXPORT_DIR/" 2>/dev/null || true
           # Add .nojekyll for GitHub Pages
-          touch .next/export/.nojekyll
+          touch "$EXPORT_DIR/.nojekyll"
+          
+          # If export dir is not 'out', move it
+          if [ "$EXPORT_DIR" != "out" ]; then
+            mv "$EXPORT_DIR" out
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.next/export
+          path: ./out
 
   deploy:
     environment:
