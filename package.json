@@ -1,0 +1,14 @@
+{
+  "name": "wovser-docs",
+  "version": "1.0.0",
+  "description": "Wovser.AI Documentation Site",
+  "private": true,
+  "scripts": {
+    "dev": "mintlify dev",
+    "build": "mintlify build",
+    "preview": "mintlify preview"
+  },
+  "devDependencies": {
+    "mintlify": "^4.0.0"
+  }
+}

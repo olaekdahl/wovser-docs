@@ -1,0 +1,238 @@
+---
+title: 'FAQ'
+description: 'Frequently asked questions about Wovser.AI'
+---
+
+## General
+
+<AccordionGroup>
+  <Accordion title="What is Wovser.AI?">
+    Wovser.AI is a skills orchestration platform for creating and delivering quizzes, assessments, and coding challenges. It combines AI-powered content generation with live session capabilities and detailed analytics.
+  </Accordion>
+  
+  <Accordion title="Who is Wovser.AI for?">
+    - **Recruiters** screening technical candidates
+    - **Educators** creating engaging learning experiences
+    - **L&D teams** assessing and certifying skills
+    - **Event organizers** running live trivia and competitions
+  </Accordion>
+  
+  <Accordion title="Is there a free trial?">
+    Yes! You can start with a free trial that includes:
+    - 1 project
+    - 1 quiz, assessment, and code challenge
+    - 7 days to evaluate
+    - No credit card required
+  </Accordion>
+  
+  <Accordion title="What languages do you support for code challenges?">
+    We support 10+ languages including:
+    - Python, JavaScript, TypeScript
+    - Java, C#, Go, Rust
+    - Shell, PowerShell
+    - SQL
+  </Accordion>
+</AccordionGroup>
+
+## Account & Billing
+
+<AccordionGroup>
+  <Accordion title="How do I upgrade my plan?">
+    1. Log into your dashboard
+    2. Go to **Settings** → **Billing**
+    3. Select your desired plan
+    4. Complete checkout
+    
+    Upgrades take effect immediately.
+  </Accordion>
+  
+  <Accordion title="Can I cancel anytime?">
+    Yes, you can cancel your subscription at any time. You'll retain access until the end of your billing period.
+  </Accordion>
+  
+  <Accordion title="Do you offer refunds?">
+    We offer a 14-day money-back guarantee for annual plans. Contact support@wovser.ai for refund requests.
+  </Accordion>
+  
+  <Accordion title="What payment methods do you accept?">
+    We accept:
+    - Credit/debit cards (Visa, Mastercard, Amex)
+    - ACH bank transfers (Enterprise)
+    - Invoicing (Enterprise)
+  </Accordion>
+</AccordionGroup>
+
+## Quizzes & Assessments
+
+<AccordionGroup>
+  <Accordion title="How does AI question generation work?">
+    Enter a prompt describing your topic, difficulty, and number of questions. Our AI (powered by GPT-4) generates relevant questions with answer options. You can edit, regenerate, or manually add questions.
+  </Accordion>
+  
+  <Accordion title="Can I import existing questions?">
+    Yes! You can:
+    - Import from our question bank
+    - Upload via CSV
+    - Copy/paste from other sources
+    - Use the API for bulk import
+  </Accordion>
+  
+  <Accordion title="How many participants can join a session?">
+    | Plan | Max Participants |
+    |------|------------------|
+    | Pro | 200 per session |
+    | Scale | 500 per session |
+    | Enterprise | Unlimited |
+  </Accordion>
+  
+  <Accordion title="Can participants join late?">
+    If enabled by the host, participants can join after a session starts. They'll join from the current question but may miss earlier questions.
+  </Accordion>
+</AccordionGroup>
+
+## Code Challenges
+
+<AccordionGroup>
+  <Accordion title="How are code challenges executed?">
+    Each participant gets an isolated VS Code workspace in the cloud. Code runs in secure containers with:
+    - No network access (by default)
+    - Resource limits (CPU, memory, time)
+    - Pre-installed language runtimes
+  </Accordion>
+  
+  <Accordion title="Can candidates install packages?">
+    By default, no. Workspaces come with standard libraries pre-installed. Custom dependencies can be configured for Enterprise plans.
+  </Accordion>
+  
+  <Accordion title="How is code scored?">
+    - **Test cases**: Pass/fail against predefined tests
+    - **Hidden tests**: Prevent hardcoding answers
+    - **AI review**: Optional code quality feedback
+  </Accordion>
+  
+  <Accordion title="What if a candidate's code times out?">
+    If code exceeds the time limit (default 10s), execution stops and the test fails. Candidates should optimize their solutions for efficiency.
+  </Accordion>
+</AccordionGroup>
+
+## Proctoring
+
+<AccordionGroup>
+  <Accordion title="What does proctoring monitor?">
+    When enabled, proctoring can track:
+    - Webcam (face detection, person count)
+    - Tab/window switching
+    - Copy/paste activity
+    - Browser focus
+  </Accordion>
+  
+  <Accordion title="Does proctoring auto-fail candidates?">
+    No. Proctoring flags suspicious activity for review. A human reviewer (you) decides whether the behavior warrants action.
+  </Accordion>
+  
+  <Accordion title="Is proctoring required?">
+    No. Proctoring is optional and must be explicitly enabled by the host. Participants must consent before starting.
+  </Accordion>
+  
+  <Accordion title="What data is stored?">
+    - Event logs (timestamps, event types)
+    - Flagged frame thumbnails (if faces detected)
+    - Risk scores
+    
+    Data is retained per your tenant's retention policy.
+  </Accordion>
+</AccordionGroup>
+
+## Integrations
+
+<AccordionGroup>
+  <Accordion title="Which LMS platforms do you support?">
+    We support LTI 1.3 integration with:
+    - Canvas
+    - Moodle
+    - Blackboard
+    - D2L Brightspace
+    - Any LTI 1.3 compliant platform
+  </Accordion>
+  
+  <Accordion title="Do you integrate with Greenhouse/Lever?">
+    Yes! We integrate with major ATS platforms to:
+    - Trigger assessments from interview stages
+    - Pass scores back to candidate profiles
+    - Link to detailed results
+  </Accordion>
+  
+  <Accordion title="Can I use my own OpenAI key?">
+    Yes. Enterprise plans can configure their own OpenAI API key for content generation. This keeps usage on your OpenAI account.
+  </Accordion>
+</AccordionGroup>
+
+## Security & Compliance
+
+<AccordionGroup>
+  <Accordion title="Is Wovser.AI SOC 2 compliant?">
+    We are actively pursuing SOC 2 Type II certification. Contact us for our current security documentation.
+  </Accordion>
+  
+  <Accordion title="Where is data stored?">
+    Data is stored in Azure data centers in the United States. Enterprise plans can request specific regions.
+  </Accordion>
+  
+  <Accordion title="Do you support SSO?">
+    Yes. We support:
+    - SAML 2.0
+    - OAuth 2.0 / OIDC
+    - Azure AD, Okta, Google Workspace, OneLogin
+  </Accordion>
+  
+  <Accordion title="Can I export my data?">
+    Yes. You can export:
+    - Quiz/assessment content (JSON)
+    - Results and analytics (CSV, PDF)
+    - All user data (GDPR compliance)
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I can't join a session">
+    - Verify the PIN code is correct
+    - Check if the session has started (late join may be disabled)
+    - Try a different browser
+    - Clear cache and cookies
+  </Accordion>
+  
+  <Accordion title="My code won't run">
+    - Check for syntax errors
+    - Verify you're using the correct language
+    - Ensure you haven't exceeded resource limits
+    - Check the terminal for error messages
+  </Accordion>
+  
+  <Accordion title="Camera won't work for proctoring">
+    - Grant camera permissions in browser settings
+    - Close other apps using the camera
+    - Try a different browser
+    - Check if your camera works in other apps
+  </Accordion>
+</AccordionGroup>
+
+## Still Have Questions?
+
+<CardGroup cols={2}>
+  <Card
+    title="Contact Support"
+    icon="headset"
+    href="/support/contact"
+  >
+    Get help from our team
+  </Card>
+  <Card
+    title="Troubleshooting Guide"
+    icon="wrench"
+    href="/support/troubleshooting"
+  >
+    Solve common issues
+  </Card>
+</CardGroup>

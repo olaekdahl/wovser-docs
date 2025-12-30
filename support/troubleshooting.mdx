@@ -1,0 +1,238 @@
+---
+title: 'Troubleshooting'
+description: 'Solutions for common issues'
+---
+
+## Connection Issues
+
+### Can't join a session
+
+<Steps>
+  <Step title="Verify PIN">
+    Double-check the 6-digit PIN. PINs are case-insensitive.
+  </Step>
+  
+  <Step title="Check session status">
+    The session may have ended or not started yet. Ask your host.
+  </Step>
+  
+  <Step title="Try direct link">
+    If PIN doesn't work, ask for the direct URL.
+  </Step>
+  
+  <Step title="Clear browser cache">
+    - Chrome: `Ctrl+Shift+Delete`
+    - Firefox: `Ctrl+Shift+Delete`
+    - Safari: `Cmd+Shift+Delete`
+  </Step>
+  
+  <Step title="Try different browser">
+    Use Chrome, Firefox, or Edge. Safari may have issues.
+  </Step>
+</Steps>
+
+### Disconnected mid-session
+
+Your progress is saved automatically. To reconnect:
+
+1. Refresh the page
+2. Re-enter the session (same PIN/link)
+3. You'll resume where you left off
+
+<Info>
+For live quizzes, the timer continues while disconnected. For assessments, contact your administrator if you need extra time.
+</Info>
+
+---
+
+## Code Challenge Issues
+
+### Code won't run
+
+<AccordionGroup>
+  <Accordion title="Syntax errors">
+    Check the terminal output for error messages. Common issues:
+    - Missing colons (Python)
+    - Missing semicolons (JavaScript/Java)
+    - Unbalanced brackets
+    - Typos in keywords
+  </Accordion>
+  
+  <Accordion title="Wrong language selected">
+    Ensure the file extension matches your language:
+    - `.py` for Python
+    - `.js` for JavaScript
+    - `.ts` for TypeScript
+    - `.java` for Java
+  </Accordion>
+  
+  <Accordion title="Import errors">
+    Only standard library imports are available by default. Check which packages are pre-installed in the problem description.
+  </Accordion>
+  
+  <Accordion title="Timeout">
+    Your code is taking too long. Optimize your algorithm:
+    - Reduce nested loops
+    - Use hash maps for lookups
+    - Check for infinite loops
+  </Accordion>
+</AccordionGroup>
+
+### Workspace won't load
+
+<Steps>
+  <Step title="Wait longer">
+    Workspaces take 10-30 seconds to provision. Be patient.
+  </Step>
+  
+  <Step title="Check popup blocker">
+    Allow popups from wovser.ai if the workspace opens in a new window.
+  </Step>
+  
+  <Step title="Refresh the page">
+    If stuck loading, refresh and try again.
+  </Step>
+  
+  <Step title="Contact support">
+    If the issue persists, contact support with your session ID.
+  </Step>
+</Steps>
+
+---
+
+## Proctoring Issues
+
+### Camera not detected
+
+<Steps>
+  <Step title="Check permissions">
+    Click the camera icon in your browser's address bar and ensure permissions are granted.
+    
+    **Chrome**: Settings → Privacy → Site Settings → Camera
+    **Firefox**: Settings → Privacy → Permissions → Camera
+  </Step>
+  
+  <Step title="Close other apps">
+    Zoom, Teams, and other video apps may be using your camera. Close them.
+  </Step>
+  
+  <Step title="Test camera">
+    Visit [webcamtests.com](https://webcamtests.com) to verify your camera works.
+  </Step>
+  
+  <Step title="Try external camera">
+    If using a built-in camera, try an external USB webcam.
+  </Step>
+</Steps>
+
+### Proctoring keeps flagging me
+
+Common false positives:
+
+| Flag | Likely Cause | Solution |
+|------|--------------|----------|
+| Multiple faces | Reflection or photo | Remove reflective surfaces |
+| Looking away | Reading physical notes | Use digital notes or none |
+| Tab switch | System notification | Disable notifications |
+
+<Info>
+Flags don't automatically fail you. Reviewers understand false positives happen.
+</Info>
+
+---
+
+## Audio/Video Issues
+
+### Can't hear quiz audio
+
+1. Check system volume
+2. Verify browser isn't muted
+3. Check speaker selection in browser
+4. Try headphones
+
+### Leaderboard not updating
+
+1. Check internet connection
+2. Refresh the page
+3. WebSocket may be blocked - try different network
+
+---
+
+## Login Issues
+
+### Can't log in
+
+<AccordionGroup>
+  <Accordion title="Forgot password">
+    1. Click "Forgot Password" on login page
+    2. Enter your email
+    3. Check inbox (and spam folder)
+    4. Click reset link
+    5. Set new password
+  </Accordion>
+  
+  <Accordion title="SSO not working">
+    1. Verify your organization uses SSO
+    2. Use the correct SSO button (not email/password)
+    3. Contact your IT admin if issues persist
+  </Accordion>
+  
+  <Accordion title="Account locked">
+    After 5 failed attempts, accounts are temporarily locked. Wait 15 minutes or contact support.
+  </Accordion>
+</AccordionGroup>
+
+### Session expired
+
+Your session expires after 24 hours of inactivity. Simply log in again.
+
+---
+
+## Browser Compatibility
+
+### Recommended browsers
+
+| Browser | Minimum Version | Status |
+|---------|-----------------|--------|
+| Chrome | 90+ | ✅ Full support |
+| Firefox | 88+ | ✅ Full support |
+| Edge | 90+ | ✅ Full support |
+| Safari | 14+ | ⚠️ Some issues |
+
+### Known Safari issues
+
+- Webcam permission prompts may repeat
+- Some CSS animations may be slow
+- WebSocket reconnection slower
+
+**Recommendation**: Use Chrome for best experience.
+
+---
+
+## Still Stuck?
+
+If you've tried the above and still have issues:
+
+<CardGroup cols={2}>
+  <Card
+    title="Contact Support"
+    icon="headset"
+    href="/support/contact"
+  >
+    Email: support@wovser.ai
+  </Card>
+  <Card
+    title="Live Chat"
+    icon="comments"
+    href="https://app.wovser.ai"
+  >
+    Available 9am-6pm EST
+  </Card>
+</CardGroup>
+
+When contacting support, include:
+- Your email address
+- Session ID (if applicable)
+- Browser and version
+- Screenshots of the issue
+- Steps to reproduce

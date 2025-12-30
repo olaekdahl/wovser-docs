@@ -1,0 +1,162 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Wovser.AI Documentation",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#6366f1",
+    "light": "#818cf8",
+    "dark": "#4f46e5",
+    "anchors": {
+      "from": "#6366f1",
+      "to": "#a855f7"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@wovser.ai"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://app.wovser.ai"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/wovser"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://wovser.ai/blog"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "concepts"
+      ]
+    },
+    {
+      "group": "For Hosts",
+      "pages": [
+        "hosts/overview",
+        "hosts/creating-quizzes",
+        "hosts/creating-assessments",
+        "hosts/code-challenges",
+        "hosts/live-sessions",
+        "hosts/analytics"
+      ]
+    },
+    {
+      "group": "For Players",
+      "pages": [
+        "players/overview",
+        "players/joining-sessions",
+        "players/taking-assessments",
+        "players/code-challenge-tips"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "integrations/overview",
+        "integrations/canvas-lms",
+        "integrations/moodle",
+        "integrations/sso-saml",
+        "integrations/sso-oidc",
+        "integrations/scim",
+        "integrations/webhooks"
+      ]
+    },
+    {
+      "group": "Administration",
+      "pages": [
+        "admin/overview",
+        "admin/tenant-setup",
+        "admin/user-management",
+        "admin/billing",
+        "admin/white-labeling",
+        "admin/custom-domains"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction",
+        "api-reference/authentication"
+      ]
+    },
+    {
+      "group": "Quizzes",
+      "pages": [
+        "api-reference/quizzes/list",
+        "api-reference/quizzes/get",
+        "api-reference/quizzes/create",
+        "api-reference/quizzes/update",
+        "api-reference/quizzes/delete"
+      ]
+    },
+    {
+      "group": "Assessments",
+      "pages": [
+        "api-reference/assessments/list",
+        "api-reference/assessments/get",
+        "api-reference/assessments/create",
+        "api-reference/assessments/invite"
+      ]
+    },
+    {
+      "group": "Code Challenges",
+      "pages": [
+        "api-reference/challenges/list",
+        "api-reference/challenges/get",
+        "api-reference/challenges/create",
+        "api-reference/challenges/execute"
+      ]
+    },
+    {
+      "group": "Support",
+      "pages": [
+        "support/faq",
+        "support/troubleshooting",
+        "support/contact"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/wovserai",
+    "github": "https://github.com/wovser",
+    "linkedin": "https://linkedin.com/company/wovser"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "analytics": {
+    "posthog": {
+      "apiKey": ""
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.wovser.ai",
+    "auth": {
+      "method": "bearer"
+    }
+  }
+}

@@ -1,0 +1,288 @@
+---
+title: 'Analytics'
+description: 'Track performance and gain insights from your quizzes and assessments'
+---
+
+Wovser.AI provides comprehensive analytics to help you understand participant performance, identify knowledge gaps, and improve your content.
+
+## Dashboard Overview
+
+Your analytics dashboard shows:
+
+<Frame>
+  <img src="/images/hosts/analytics-dashboard.png" alt="Analytics Dashboard" />
+</Frame>
+
+### Key Metrics
+
+<CardGroup cols={4}>
+  <Card title="Sessions" icon="play">
+    Total sessions hosted
+  </Card>
+  <Card title="Participants" icon="users">
+    Unique participants
+  </Card>
+  <Card title="Avg Score" icon="chart-line">
+    Mean score across all sessions
+  </Card>
+  <Card title="Pass Rate" icon="check">
+    % meeting passing threshold
+  </Card>
+</CardGroup>
+
+## Session Analytics
+
+For each completed session:
+
+### Score Distribution
+
+```
+Score Range    │ Count │ Percentage
+───────────────┼───────┼───────────
+90-100%        │  12   │ ████████ 24%
+80-89%         │  18   │ ████████████ 36%
+70-79%         │  10   │ ██████ 20%
+60-69%         │   6   │ ████ 12%
+Below 60%      │   4   │ ██ 8%
+```
+
+### Time Analysis
+
+| Metric | Value |
+|--------|-------|
+| Average completion time | 12m 34s |
+| Fastest completion | 8m 02s |
+| Slowest completion | 24m 15s |
+| Avg time per question | 37s |
+
+### Question Performance
+
+See how each question performed:
+
+| Question | Correct | Incorrect | Skipped | Avg Time |
+|----------|---------|-----------|---------|----------|
+| Q1: What is React? | 92% | 6% | 2% | 15s |
+| Q2: useState hook | 78% | 20% | 2% | 28s |
+| Q3: useEffect deps | 45% | 52% | 3% | 42s |
+
+<Warning>
+Questions with low accuracy may indicate:
+- Confusing wording
+- Incorrect marked answer
+- Topic not well covered in training
+</Warning>
+
+## Question Analytics
+
+### Difficulty Analysis
+
+Questions are automatically rated based on performance:
+
+- 🟢 **Easy**: >80% correct
+- 🟡 **Medium**: 50-80% correct
+- 🔴 **Hard**: <50% correct
+
+### Answer Distribution
+
+For multiple choice questions:
+
+```
+Q: Which hook is used for side effects?
+
+A) useState      ████ 12%
+B) useEffect     ████████████████████████████ 78% ✓
+C) useMemo       ██ 6%
+D) useCallback   █ 4%
+```
+
+### Time vs Accuracy
+
+<Frame>
+  <img src="/images/hosts/time-accuracy-chart.png" alt="Time vs Accuracy" />
+</Frame>
+
+Identify questions where:
+- Fast responses = high accuracy (well understood)
+- Slow responses = low accuracy (needs more training)
+- Fast responses = low accuracy (guessing/confusing)
+
+## Participant Analytics
+
+### Individual Performance
+
+For each participant:
+
+<CardGroup cols={3}>
+  <Card title="Score" icon="star">
+    Final percentage score
+  </Card>
+  <Card title="Rank" icon="ranking-star">
+    Position among all participants
+  </Card>
+  <Card title="Time" icon="clock">
+    Total completion time
+  </Card>
+</CardGroup>
+
+Plus:
+- Question-by-question responses
+- Time spent per question
+- Correct/incorrect breakdown
+- Strengths and weaknesses by topic
+
+### Comparative Analysis
+
+Compare participants:
+
+| Participant | Score | Rank | Strengths | Weaknesses |
+|-------------|-------|------|-----------|------------|
+| Alice | 92% | 1 | React hooks, State | Testing |
+| Bob | 85% | 2 | Components, Props | Performance |
+| Carol | 78% | 3 | Testing, Debugging | Hooks |
+
+## Trend Analysis
+
+### Over Time
+
+Track metrics across multiple sessions:
+
+<Frame>
+  <img src="/images/hosts/trends-chart.png" alt="Trends Over Time" />
+</Frame>
+
+- Average scores trending up/down
+- Participation rates
+- Completion rates
+- Topic mastery improvement
+
+### Cohort Comparison
+
+Compare different groups:
+
+| Cohort | Sessions | Avg Score | Pass Rate |
+|--------|----------|-----------|-----------|
+| Engineering Q1 | 12 | 82% | 94% |
+| Engineering Q2 | 15 | 85% | 96% |
+| Sales Q1 | 8 | 74% | 82% |
+| Sales Q2 | 10 | 79% | 88% |
+
+## Exporting Data
+
+### Available Formats
+
+<Tabs>
+  <Tab title="CSV">
+    Raw data export including:
+    - Participant details
+    - All responses
+    - Timestamps
+    - Scores
+    
+    Perfect for Excel/Google Sheets analysis.
+  </Tab>
+  <Tab title="PDF">
+    Formatted reports:
+    - Executive summary
+    - Charts and graphs
+    - Individual score cards
+    
+    Ready for printing/sharing.
+  </Tab>
+  <Tab title="JSON">
+    Structured data for:
+    - API integrations
+    - Custom dashboards
+    - Data warehouses
+  </Tab>
+</Tabs>
+
+### Scheduled Reports
+
+Set up automatic report delivery:
+
+1. Go to **Settings** → **Scheduled Reports**
+2. Click **Create Report**
+3. Configure:
+   - Report type (summary, detailed, custom)
+   - Frequency (daily, weekly, monthly)
+   - Recipients (email addresses)
+   - Format (PDF, CSV)
+4. Save schedule
+
+## API Access
+
+Access analytics programmatically:
+
+```bash
+# Get session analytics
+GET /api/sessions/{sessionId}/analytics
+
+# Response
+{
+  "sessionId": "abc123",
+  "totalParticipants": 50,
+  "averageScore": 82.5,
+  "passRate": 0.94,
+  "questionStats": [...],
+  "scoreDistribution": {...}
+}
+```
+
+See [API Reference](/api-reference/introduction) for full documentation.
+
+## Integrations
+
+### Data Warehouse
+
+Export to your data warehouse:
+
+<CardGroup cols={3}>
+  <Card title="Snowflake" icon="snowflake">
+    Native connector
+  </Card>
+  <Card title="BigQuery" icon="google">
+    Scheduled exports
+  </Card>
+  <Card title="S3/Blob" icon="cloud">
+    File-based export
+  </Card>
+</CardGroup>
+
+### BI Tools
+
+Connect your visualization tools:
+
+- **Tableau**: Direct connector
+- **Power BI**: REST API
+- **Looker**: SQL interface
+- **Metabase**: Direct connection
+
+## Best Practices
+
+<Tip>
+**Get the most from analytics:**
+- Review question performance after each session
+- Identify and fix consistently hard questions
+- Track improvement over time for recurring assessments
+- Use cohort comparison for training effectiveness
+- Export data for deeper custom analysis
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-reference/introduction"
+  >
+    Access analytics programmatically
+  </Card>
+  <Card
+    title="Integrations"
+    icon="plug"
+    href="/integrations/overview"
+  >
+    Connect to external systems
+  </Card>
+</CardGroup>
