@@ -4,7 +4,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 const config: DocsThemeConfig = {
   logo: (
     <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 700, fontSize: '1.2rem' }}>
-      <img src="/logo/wovser-logo.svg" alt="Wovser.AI Docs" style={{ height: '24px' }} />
+      <img src="/logo/wovser-logo.svg" alt="Wovser.AI Documentation" style={{ height: '24px' }} />
     </span>
   ),
   project: {
