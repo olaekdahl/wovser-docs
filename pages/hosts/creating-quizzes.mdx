@@ -1,0 +1,107 @@
+# Creating Quizzes
+
+Learn how to create engaging quizzes that effectively assess knowledge and skills.
+
+import { Steps, Callout, Tabs } from 'nextra/components'
+
+## Quiz Creation Process
+
+<Steps>
+
+### Start a New Quiz
+
+From your dashboard, click **Create Quiz**. Enter a title and optional description.
+
+### Configure Settings
+
+Set your quiz parameters:
+- **Time limit** - Per question or total quiz time
+- **Scoring** - Points per question, speed bonuses
+- **Attempts** - Single attempt or multiple tries
+- **Randomization** - Shuffle questions and/or answers
+
+### Add Questions
+
+Add questions using one of these methods:
+
+<Tabs items={['Manual Entry', 'AI Generation', 'Question Bank']}>
+  <Tabs.Tab>
+    Click **Add Question** and select the question type. Fill in the question text, answers, and correct answer(s).
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Click **Generate with AI**, describe the topic and difficulty, and review the generated questions.
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Click **From Bank** to browse your question library. Filter by category, tags, or difficulty.
+  </Tabs.Tab>
+</Tabs>
+
+### Preview and Test
+
+Use the **Preview** button to see how your quiz will appear to participants. Test the flow and timing.
+
+### Save and Publish
+
+Click **Save** to save as draft, or **Publish** to make the quiz available for sessions.
+
+</Steps>
+
+## Question Types
+
+### Multiple Choice
+Present 2-6 answer options with one or more correct answers.
+
+**Best for:** Factual recall, concept understanding
+
+### True/False
+Simple binary choice questions.
+
+**Best for:** Quick assessments, myth-busting
+
+### Short Answer
+Free-text responses with keyword matching or exact answer validation.
+
+**Best for:** Terminology, definitions, calculations
+
+### Ordering
+Participants arrange items in the correct sequence.
+
+**Best for:** Processes, timelines, priorities
+
+### Matching
+Connect items from two columns.
+
+**Best for:** Vocabulary, associations, relationships
+
+## AI Question Generation
+
+<Callout type="info">
+  Wovser.AI can generate questions automatically based on your specifications.
+</Callout>
+
+### Using AI Generation
+
+1. Click **Generate with AI**
+2. Specify the topic and subtopics
+3. Select difficulty level (Easy, Medium, Hard)
+4. Choose question types to include
+5. Set the number of questions
+6. Review and edit generated content
+
+### Tips for Better AI Questions
+
+- Be specific about the topic scope
+- Provide example questions for style guidance
+- Always review for accuracy before publishing
+- Edit and refine to match your needs
+
+## Quiz Settings Reference
+
+| Setting | Options | Description |
+|---------|---------|-------------|
+| Time Limit | None, Per Question, Total | How timing is enforced |
+| Scoring Mode | Standard, Speed Bonus, No Points | How points are calculated |
+| Question Order | Sequential, Random | Order of question presentation |
+| Answer Order | Fixed, Shuffled | Order of answer options |
+| Show Answers | After Each, At End, Never | When correct answers are revealed |
+| Allow Review | Yes, No | Can participants review their answers |

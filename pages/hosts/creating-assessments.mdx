@@ -1,0 +1,121 @@
+# Creating Assessments
+
+Build comprehensive skill assessments for hiring, training, or certification.
+
+import { Callout, Steps } from 'nextra/components'
+
+## Assessments vs Quizzes
+
+| Feature | Quiz | Assessment |
+|---------|------|------------|
+| Primary Use | Live competition | Skill evaluation |
+| Pacing | Host-controlled | Self-paced |
+| Timing | Real-time | Flexible window |
+| Focus | Engagement | Accuracy |
+
+## Creating an Assessment
+
+<Steps>
+
+### Define the Assessment
+
+Click **Create Assessment** and configure:
+- **Title** - Clear, descriptive name
+- **Description** - What the assessment covers
+- **Instructions** - Guidelines for participants
+
+### Set Parameters
+
+Configure assessment behavior:
+- **Time Window** - When the assessment is available
+- **Duration** - How long participants have once started
+- **Attempts** - Number of tries allowed
+- **Passing Score** - Minimum score required
+
+### Build Content Sections
+
+Organize your assessment into sections:
+- Group related questions together
+- Set per-section time limits (optional)
+- Configure section navigation rules
+
+### Add Questions
+
+Include a variety of question types to evaluate different skills:
+- Knowledge questions (multiple choice, true/false)
+- Application questions (scenario-based, problem-solving)
+- Practical tasks (code challenges, written responses)
+
+### Configure Feedback
+
+Set up result delivery:
+- **Immediate** - Show results upon completion
+- **Delayed** - Release results at a specific time
+- **Manual** - Review before releasing
+
+</Steps>
+
+## Assessment Types
+
+### Skills Assessment
+Evaluate specific competencies for hiring or development.
+
+<Callout type="info">
+  Tip: Include questions at varying difficulty levels to accurately gauge skill depth.
+</Callout>
+
+### Certification Exam
+Formal evaluation for credential verification.
+
+**Key settings:**
+- Proctoring enabled
+- Single attempt
+- Strict time limits
+- Passing threshold required
+
+### Training Evaluation
+Measure learning outcomes after training programs.
+
+**Key settings:**
+- Pre/post assessment comparison
+- Multiple attempts allowed
+- Detailed feedback enabled
+
+## Proctoring Options
+
+<Callout type="warning">
+  Proctoring features require additional configuration. Contact your administrator.
+</Callout>
+
+Available proctoring features:
+- **Webcam monitoring** - Record participant video
+- **Screen recording** - Capture screen activity
+- **Browser lockdown** - Prevent tab switching
+- **Copy/paste detection** - Flag suspicious behavior
+- **AI analysis** - Automated review of recordings
+
+## Scoring Configuration
+
+### Automatic Scoring
+- Multiple choice, true/false, matching
+- Code challenges with test cases
+- Keyword-based short answers
+
+### Manual Scoring
+- Open-ended written responses
+- Complex problem solutions
+- Subjective evaluations
+
+### Weighted Scoring
+Assign different point values based on:
+- Question difficulty
+- Section importance
+- Skill priority
+
+## Results and Reporting
+
+After completion, access:
+- **Individual Reports** - Detailed per-participant breakdown
+- **Aggregate Analytics** - Group performance patterns
+- **Question Analysis** - Item difficulty and discrimination
+- **Export Options** - CSV, PDF, or API access

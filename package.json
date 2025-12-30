@@ -4,11 +4,24 @@
   "description": "Wovser.AI Documentation Site",
   "private": true,
   "scripts": {
-    "dev": "mintlify dev",
-    "build": "mintlify build",
-    "preview": "mintlify preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.1.0",
+    "nextra": "^2.13.2",
+    "nextra-theme-docs": "^2.13.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "mintlify": "^4.0.0"
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "shiki": "0.14.7"
   }
 }

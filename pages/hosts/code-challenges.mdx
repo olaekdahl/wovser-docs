@@ -1,0 +1,155 @@
+# Code Challenges
+
+Create programming assessments with browser-based coding environments.
+
+import { Callout, Tabs, Steps } from 'nextra/components'
+
+## Supported Languages
+
+Wovser.AI supports a wide range of programming languages:
+
+| Language | Version | Use Cases |
+|----------|---------|-----------|
+| JavaScript | ES2022+ | Web development, Node.js |
+| TypeScript | 5.x | Type-safe JavaScript |
+| Python | 3.11+ | General programming, data science |
+| Java | 17+ | Enterprise, Android |
+| Go | 1.21+ | Systems programming, cloud |
+| Rust | Latest | Systems programming, performance |
+| C/C++ | GCC 12+ | Systems, embedded |
+| Ruby | 3.x | Web development, scripting |
+| PHP | 8.x | Web development |
+| Shell | Bash 5.x | DevOps, automation |
+
+## Creating a Code Challenge
+
+<Steps>
+
+### Define the Challenge
+
+Provide clear context:
+- **Title** - Descriptive challenge name
+- **Description** - Problem statement and requirements
+- **Difficulty** - Easy, Medium, Hard
+- **Time Limit** - Suggested completion time
+
+### Write the Problem Statement
+
+Include:
+- **Context** - Why this problem matters
+- **Requirements** - What the solution must do
+- **Constraints** - Limits and edge cases
+- **Examples** - Input/output samples
+
+### Set Up the Workspace
+
+Configure the coding environment:
+- Select supported language(s)
+- Provide starter code (optional)
+- Include helper files if needed
+- Configure terminal access
+
+### Create Test Cases
+
+<Tabs items={['Visible Tests', 'Hidden Tests']}>
+  <Tabs.Tab>
+    Visible test cases help participants understand the requirements. Include:
+    - Basic functionality tests
+    - Edge case examples
+    - Sample inputs from the problem statement
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Hidden test cases validate the solution thoroughly:
+    - Edge cases not revealed to participants
+    - Performance tests (large inputs)
+    - Security tests (input validation)
+  </Tabs.Tab>
+</Tabs>
+
+### Configure Scoring
+
+Set how submissions are evaluated:
+- **Pass/Fail** - All tests must pass
+- **Partial Credit** - Points per passing test
+- **Code Quality** - Style and best practices
+- **Performance** - Efficiency metrics
+
+</Steps>
+
+## Workspace Features
+
+### Real Terminal Access
+Participants have access to a full terminal for:
+- Running their code
+- Installing packages (within limits)
+- Debugging with standard tools
+- Testing edge cases
+
+<Callout type="info">
+  Terminal sessions are sandboxed for security. Network access and system modifications are restricted.
+</Callout>
+
+### File System
+Each workspace includes:
+- Main solution file(s)
+- Test file(s)
+- README with instructions
+- Optional helper files
+
+### IntelliSense & Linting
+The editor provides:
+- Syntax highlighting
+- Auto-completion
+- Error detection
+- Code formatting
+
+## Best Practices
+
+### Writing Good Problem Statements
+
+1. **Be specific** - Clearly define inputs, outputs, and constraints
+2. **Include examples** - Show expected behavior
+3. **Mention edge cases** - Help participants understand boundaries
+4. **Keep it focused** - Test one concept at a time
+
+### Creating Effective Test Cases
+
+- Cover happy path scenarios
+- Include boundary conditions
+- Test error handling
+- Consider performance implications
+- Balance visible vs hidden tests
+
+### Time Allocation
+
+| Difficulty | Suggested Time |
+|------------|----------------|
+| Easy | 15-30 minutes |
+| Medium | 30-60 minutes |
+| Hard | 60-120 minutes |
+
+## Evaluation Options
+
+### Automated Testing
+```javascript
+// Example test case structure
+{
+  input: [1, 2, 3, 4, 5],
+  expectedOutput: 15,
+  description: "Sum of array elements",
+  points: 10
+}
+```
+
+### Manual Review
+For subjective evaluation:
+- Code organization
+- Documentation quality
+- Algorithm choice rationale
+- Error handling approach
+
+### Plagiarism Detection
+
+<Callout type="warning">
+  Enable plagiarism detection to compare submissions across participants and against known sources.
+</Callout>

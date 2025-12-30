@@ -1,0 +1,99 @@
+# Core Concepts
+
+Understanding the key concepts in Wovser.AI will help you get the most out of the platform.
+
+## Organizations & Tenants
+
+Wovser.AI is a multi-tenant platform. Each **organization** (tenant) has its own:
+- User accounts and roles
+- Question banks and content
+- Branding and customization
+- Usage quotas and billing
+
+## User Roles
+
+import { Callout } from 'nextra/components'
+
+### Host
+Hosts create and manage content. They can:
+- Create quizzes, assessments, and code challenges
+- Start and manage live sessions
+- View analytics and reports
+- Manage question banks
+
+### Player
+Players participate in assessments. They can:
+- Join live quiz sessions
+- Complete assessments
+- Participate in code challenges
+- View their results and progress
+
+### Admin
+Organization administrators have full control:
+- Manage users and roles
+- Configure organization settings
+- Access billing and quotas
+- Set up integrations
+
+## Content Types
+
+### Quizzes
+Live, competitive sessions where participants answer questions in real-time. Features include:
+- Multiple choice, true/false, and short answer questions
+- Time limits per question
+- Live leaderboards
+- Team mode support
+
+### Assessments
+Self-paced evaluations for measuring skills. Features include:
+- Flexible time limits
+- Multiple attempts (configurable)
+- Automated scoring
+- Detailed feedback
+
+### Code Challenges
+Programming tasks completed in browser-based coding environments. Features include:
+- Multiple language support (JavaScript, TypeScript, Python, Java, Go, Rust, etc.)
+- Real terminal access
+- Test case validation
+- Workspace persistence
+
+## Sessions & Participation
+
+<Callout type="info">
+  A **session** is an instance of a quiz or assessment that players can join.
+</Callout>
+
+### Session Codes
+Each session has a unique 6-character code that players use to join. Codes are:
+- Case-insensitive
+- Valid for the session duration
+- Shareable via link or QR code
+
+### Session States
+- **Lobby** - Waiting for players to join
+- **Active** - Questions are being presented
+- **Paused** - Temporarily halted by host
+- **Completed** - Session has ended
+
+## Question Bank
+
+Questions are stored in a centralized **question bank** that can be:
+- Organized into categories and tags
+- Reused across multiple quizzes
+- Shared within your organization
+- Enhanced with AI-generated content
+
+## Scoring & Analytics
+
+### Scoring Methods
+- **Points-based** - Each correct answer earns points
+- **Speed bonus** - Faster answers earn more points
+- **Partial credit** - Available for certain question types
+
+### Analytics
+After sessions, you can view:
+- Individual performance reports
+- Question difficulty analysis
+- Response time distributions
+- Trend analysis over time

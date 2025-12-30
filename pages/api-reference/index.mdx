@@ -1,0 +1,126 @@
+# API Introduction
+
+Build custom integrations with the Wovser.AI REST API.
+
+import { Callout } from 'nextra/components'
+
+## Overview
+
+The Wovser.AI API provides programmatic access to:
+- Create and manage quizzes and assessments
+- Retrieve results and analytics
+- Manage users and organizations
+- Configure integrations
+
+## Base URL
+
+All API requests use the following base URL:
+
+```
+https://api.wovser.ai/v1
+```
+
+## Authentication
+
+The API uses Bearer token authentication. Include your API key in the Authorization header:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.wovser.ai/v1/quizzes
+```
+
+<Callout type="warning">
+  Keep your API keys secure. Never expose them in client-side code or public repositories.
+</Callout>
+
+## Request Format
+
+- Use JSON for request bodies
+- Set `Content-Type: application/json`
+- All timestamps are in ISO 8601 format (UTC)
+
+## Response Format
+
+All responses are JSON with a consistent structure:
+
+### Success Response
+
+```json
+{
+  "data": { /* response data */ },
+  "meta": {
+    "requestId": "req_abc123",
+    "timestamp": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+### Error Response
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid request parameters",
+    "details": [
+      { "field": "title", "message": "Title is required" }
+    ]
+  },
+  "meta": {
+    "requestId": "req_abc123",
+    "timestamp": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+## Rate Limiting
+
+API requests are rate limited:
+
+| Plan | Rate Limit |
+|------|------------|
+| Free | 100 requests/hour |
+| Pro | 1,000 requests/hour |
+| Enterprise | Custom limits |
+
+Rate limit headers are included in every response:
+- `X-RateLimit-Limit` - Maximum requests allowed
+- `X-RateLimit-Remaining` - Requests remaining
+- `X-RateLimit-Reset` - Time until limit resets (Unix timestamp)
+
+## Pagination
+
+List endpoints support cursor-based pagination:
+
+```bash
+GET /v1/quizzes?limit=20&cursor=abc123
+```
+
+Response includes pagination info:
+
+```json
+{
+  "data": [...],
+  "pagination": {
+    "hasMore": true,
+    "nextCursor": "def456"
+  }
+}
+```
+
+## Versioning
+
+The API uses URL-based versioning. The current version is `v1`.
+
+<Callout type="info">
+  We'll notify you of breaking changes via email and provide migration guides.
+</Callout>
+
+## SDKs
+
+Official SDKs are available for:
+- JavaScript/TypeScript (npm)
+- Python (pip)
+- Go (go modules)
+
+See [GitHub](https://github.com/wovser) for SDK documentation.

@@ -1,0 +1,9 @@
+{
+  "index": "Overview",
+  "canvas-lms": "Canvas LMS",
+  "moodle": "Moodle",
+  "sso-saml": "SSO (SAML)",
+  "sso-oidc": "SSO (OIDC)",
+  "scim": "SCIM Provisioning",
+  "webhooks": "Webhooks"
+}

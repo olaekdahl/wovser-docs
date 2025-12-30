@@ -1,0 +1,19 @@
+{
+  "index": "Introduction",
+  "quickstart": "Quickstart",
+  "concepts": "Core Concepts",
+  "---": {
+    "type": "separator"
+  },
+  "hosts": "For Hosts",
+  "players": "For Players",
+  "----": {
+    "type": "separator"
+  },
+  "integrations": "Integrations",
+  "api-reference": "API Reference",
+  "-----": {
+    "type": "separator"
+  },
+  "support": "Support"
+}

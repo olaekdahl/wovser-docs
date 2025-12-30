@@ -1,0 +1,183 @@
+# Troubleshooting
+
+Solutions to common issues with Wovser.AI.
+
+import { Callout, Steps } from 'nextra/components'
+
+## Login Issues
+
+### Can't Sign In
+
+<Steps>
+
+### Check Your Credentials
+
+Ensure you're using the correct email and password. Passwords are case-sensitive.
+
+### Reset Password
+
+Click **Forgot Password** on the login page to receive a reset link.
+
+### Check SSO Status
+
+If your organization uses SSO, use the **Sign in with SSO** option instead.
+
+### Clear Browser Cache
+
+Try clearing your browser cache and cookies, then attempt login again.
+
+</Steps>
+
+### SSO Not Working
+
+<Callout type="info">
+  SSO issues are often configuration problems. Contact your IT administrator.
+</Callout>
+
+Common SSO issues:
+- **"SSO not configured"** - Your organization hasn't set up SSO yet
+- **"Invalid redirect"** - SSO configuration mismatch—contact admin
+- **"User not provisioned"** - JIT provisioning may be disabled
+
+## Session Issues
+
+### Can't Join Session
+
+1. **Verify the code** - Ensure you entered it correctly (codes are 6 characters)
+2. **Check session status** - The session might not be open yet, or may have ended
+3. **Try incognito mode** - Browser extensions can interfere
+4. **Check your network** - Ensure you have a stable internet connection
+
+### Got Disconnected
+
+Your progress is automatically saved. To rejoin:
+1. Navigate back to the join page
+2. Enter the same session code
+3. You'll continue from where you left off
+
+### Session Frozen
+
+<Steps>
+
+### Wait a Moment
+
+Brief freezes can occur during high activity. Wait 10-15 seconds.
+
+### Refresh the Page
+
+Press F5 or click the refresh button. You won't lose progress.
+
+### Check Internet
+
+Test your connection with another website.
+
+### Try Another Browser
+
+If problems persist, try a different browser.
+
+</Steps>
+
+## Code Challenge Issues
+
+### Code Won't Run
+
+<Callout type="warning">
+  Check for syntax errors first. The terminal will display error messages.
+</Callout>
+
+Common causes:
+- Syntax errors in your code
+- Missing dependencies
+- Incorrect file naming
+- Wrong language selection
+
+### Terminal Not Responding
+
+1. Wait a few seconds—commands may be processing
+2. Press Enter to ensure the command was submitted
+3. Try typing `echo test` to verify the terminal
+4. Refresh the page if completely unresponsive
+
+### Tests Failing
+
+- Read error messages carefully
+- Check edge cases (empty input, null values)
+- Verify your output format matches expected output
+- Ensure you're handling all specified requirements
+
+### Can't Save Code
+
+Your code saves automatically. If you see save issues:
+1. Check your internet connection
+2. Don't close the browser during auto-save (watch for the saving indicator)
+3. Copy your code as backup before refreshing
+
+## Performance Issues
+
+### Slow Loading
+
+Improve performance by:
+- Closing unnecessary browser tabs
+- Disabling browser extensions
+- Using a wired connection instead of WiFi
+- Trying a different browser
+
+### Video/Audio Issues (Proctoring)
+
+<Steps>
+
+### Check Permissions
+
+Ensure you've granted camera and microphone permissions to the browser.
+
+### Test Your Equipment
+
+Use your system settings to verify your webcam and microphone work.
+
+### Ensure Good Lighting
+
+Proctoring requires your face to be clearly visible.
+
+### Close Other Apps
+
+Other applications using your camera may cause conflicts.
+
+</Steps>
+
+## Browser-Specific Issues
+
+### Chrome
+
+- Disable ad blockers on wovser.ai
+- Allow pop-ups for code challenge workspaces
+- Enable WebGL for optimal performance
+
+### Firefox
+
+- Disable Enhanced Tracking Protection for wovser.ai
+- Enable cookies for the domain
+
+### Safari
+
+- Enable JavaScript (Preferences → Security)
+- Disable "Prevent cross-site tracking" for assessments
+
+### Edge
+
+- Disable Tracking Prevention for wovser.ai
+- Clear cached data if experiencing issues
+
+## Still Need Help?
+
+If you've tried these solutions and still have issues:
+
+1. **Check our status page** - [status.wovser.ai](https://status.wovser.ai)
+2. **Search the community** - Others may have solved similar issues
+3. **Contact support** - [Contact Support](/support/contact)
+
+When contacting support, include:
+- Browser and version
+- Operating system
+- Description of the issue
+- Screenshots if possible
+- Session code (if applicable)

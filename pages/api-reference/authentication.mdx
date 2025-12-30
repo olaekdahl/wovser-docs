@@ -1,0 +1,132 @@
+# API Authentication
+
+Learn how to authenticate with the Wovser.AI API.
+
+import { Steps, Callout } from 'nextra/components'
+
+## Getting Your API Key
+
+<Steps>
+
+### Access API Settings
+
+Log in to your Wovser.AI account and navigate to **Settings → API**.
+
+### Create a New Key
+
+Click **Create API Key**. Provide:
+- **Name** - Descriptive name for the key
+- **Scopes** - Permissions for this key
+- **Expiration** - Optional expiration date
+
+### Copy Your Key
+
+<Callout type="warning">
+  Your API key is only shown once. Copy it immediately and store it securely.
+</Callout>
+
+### Store Securely
+
+Store your API key in:
+- Environment variables
+- Secure secret management (AWS Secrets Manager, HashiCorp Vault)
+- Never commit to version control
+
+</Steps>
+
+## Using Your API Key
+
+### Bearer Token Authentication
+
+Include your API key in the `Authorization` header:
+
+```bash
+curl -X GET "https://api.wovser.ai/v1/quizzes" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+### Example: Node.js
+
+```javascript
+const response = await fetch('https://api.wovser.ai/v1/quizzes', {
+  headers: {
+    'Authorization': `Bearer ${process.env.WOVSER_API_KEY}`,
+    'Content-Type': 'application/json'
+  }
+});
+```
+
+### Example: Python
+
+```python
+import requests
+
+headers = {
+    'Authorization': f'Bearer {os.environ["WOVSER_API_KEY"]}',
+    'Content-Type': 'application/json'
+}
+response = requests.get('https://api.wovser.ai/v1/quizzes', headers=headers)
+```
+
+## API Key Scopes
+
+Scopes control what actions an API key can perform:
+
+| Scope | Description |
+|-------|-------------|
+| `quizzes:read` | View quizzes and assessments |
+| `quizzes:write` | Create and modify quizzes |
+| `sessions:read` | View session data |
+| `sessions:write` | Start and manage sessions |
+| `analytics:read` | Access analytics data |
+| `users:read` | View user information |
+| `users:write` | Manage users |
+| `admin` | Full administrative access |
+
+<Callout type="info">
+  Follow the principle of least privilege—only grant the scopes your integration actually needs.
+</Callout>
+
+## Managing API Keys
+
+### Viewing Keys
+
+In **Settings → API**, see all active keys with:
+- Name and creation date
+- Assigned scopes
+- Last used timestamp
+- Expiration status
+
+### Revoking Keys
+
+To revoke a key:
+1. Find the key in your list
+2. Click the **Revoke** button
+3. Confirm the action
+
+Revoked keys are immediately invalid.
+
+### Rotating Keys
+
+For security, regularly rotate your API keys:
+1. Create a new key with the same scopes
+2. Update your applications to use the new key
+3. Verify everything works
+4. Revoke the old key
+
+## OAuth 2.0 (Coming Soon)
+
+For user-context operations, OAuth 2.0 support is planned:
+- Authorization Code flow for web apps
+- PKCE for mobile/SPA apps
+- Refresh token support
+
+## Security Best Practices
+
+1. **Never expose keys** in client-side code
+2. **Use environment variables** for key storage
+3. **Rotate keys regularly** (every 90 days recommended)
+4. **Monitor usage** for suspicious activity
+5. **Use minimal scopes** for each integration
+6. **Set expiration dates** when possible

@@ -1,0 +1,149 @@
+# Code Challenge Tips
+
+Strategies for succeeding in programming assessments.
+
+import { Callout, Steps } from 'nextra/components'
+
+## Before You Begin
+
+### Read Carefully
+
+<Steps>
+
+### Understand the Problem
+
+Read the entire problem statement. Note:
+- What inputs you'll receive
+- What output is expected
+- Any constraints or limits
+- Edge cases mentioned
+
+### Study the Examples
+
+Work through provided examples by hand:
+- Trace the input through your mental logic
+- Verify the expected output
+- Understand the transformation required
+
+### Plan Your Approach
+
+Before coding:
+- Sketch an algorithm outline
+- Consider time/space complexity
+- Identify potential edge cases
+
+</Steps>
+
+## During the Challenge
+
+### Start Simple
+
+<Callout type="info">
+  Get a working solution first, then optimize. A correct slow solution beats an incorrect fast one.
+</Callout>
+
+1. Implement the most straightforward approach
+2. Test with provided examples
+3. Submit to check basic functionality
+4. Optimize only if tests pass and time remains
+
+### Use the Terminal
+
+Your workspace includes a full terminal. Use it to:
+- Run your code with custom inputs
+- Debug with print statements
+- Test edge cases not in visible tests
+- Check output formatting
+
+### Common Patterns
+
+Recognize and apply these common patterns:
+
+| Pattern | Use When |
+|---------|----------|
+| Two pointers | Array/string problems with pairs |
+| Sliding window | Contiguous subarray problems |
+| Hash map | Need O(1) lookup |
+| Recursion/DP | Overlapping subproblems |
+| BFS/DFS | Graph or tree traversal |
+| Binary search | Sorted data, finding boundaries |
+
+### Debug Effectively
+
+When stuck:
+- Add print statements to trace execution
+- Test with minimal inputs
+- Check boundary conditions (0, 1, empty, max)
+- Verify data types and conversions
+- Read error messages carefully
+
+## Time Management
+
+### Suggested Breakdown
+
+For a 60-minute challenge:
+- **5 min** - Read and understand
+- **5 min** - Plan approach
+- **35 min** - Implement and test
+- **10 min** - Debug and optimize
+- **5 min** - Final review
+
+<Callout type="warning">
+  Don't spend more than half your time without a working solution. Pivot to a simpler approach if needed.
+</Callout>
+
+## Common Pitfalls
+
+### Avoid These Mistakes
+
+1. **Not reading carefully** - Missing constraints or requirements
+2. **Premature optimization** - Optimizing before it works
+3. **Ignoring edge cases** - Empty inputs, single elements, duplicates
+4. **Off-by-one errors** - Array bounds, loop conditions
+5. **Type mismatches** - String vs int, float precision
+6. **Not testing** - Submitting without running examples
+
+### Edge Cases Checklist
+
+Always consider:
+- Empty input
+- Single element
+- Duplicate values
+- Maximum values
+- Negative numbers (if applicable)
+- Special characters (for strings)
+
+## Language Tips
+
+### General Best Practices
+
+- Use meaningful variable names
+- Comment complex logic
+- Keep functions focused
+- Handle errors gracefully
+
+### Language-Specific
+
+**JavaScript/TypeScript:**
+- Use `===` for comparison
+- Handle async operations properly
+- Watch for floating point precision
+
+**Python:**
+- Use list comprehensions for clarity
+- Leverage built-in functions
+- Watch for mutable default arguments
+
+**Java:**
+- Use appropriate data structures from Collections
+- Handle null checks
+- Use StringBuilder for string concatenation
+
+## After Submission
+
+### If Time Remains
+
+- Review your code for obvious issues
+- Add comments explaining your approach
+- Consider alternative solutions
+- Document any assumptions made
