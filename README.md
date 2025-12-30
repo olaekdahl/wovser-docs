@@ -34,7 +34,7 @@ Static files are generated in `.next/export/`.
 
 ## Structure
 
-```
+```text
 docs-site/
 ├── next.config.mjs        # Next.js + Nextra configuration
 ├── theme.config.tsx       # Nextra theme configuration
@@ -81,6 +81,7 @@ docs-site/
 
 1. Create a new `.mdx` file in the appropriate `pages/` folder
 2. Add the page to the folder's `_meta.json` for navigation:
+
    ```json
    {
      "index": "Overview",
