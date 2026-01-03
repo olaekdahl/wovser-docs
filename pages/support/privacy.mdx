@@ -1,0 +1,168 @@
+# Privacy & Data Protection
+
+import { Callout } from 'nextra/components'
+
+Wovser.AI is committed to protecting your data and the privacy of your organization and candidates. This page outlines our data handling practices, particularly regarding AI-powered features.
+
+## AI Data Usage Policy
+
+<Callout type="info" emoji="🔒">
+  **Your data is never used to train AI models.** All tenant data, including code submissions, assessment responses, and candidate information, remains private and is not used to train, fine-tune, or improve any AI models.
+</Callout>
+
+### What This Means
+
+| Data Type | Used for AI Processing | Used for Model Training |
+|-----------|----------------------|------------------------|
+| Code submissions | ✓ Real-time evaluation | ✗ Never |
+| Assessment responses | ✓ Scoring & feedback | ✗ Never |
+| Candidate information | ✓ Insights generation | ✗ Never |
+| Video/proctoring frames | ✓ Violation detection | ✗ Never |
+| Generated content | ✓ Delivery to users | ✗ Never |
+
+### How AI Processing Works
+
+When you use AI features (quiz generation, code review, etc.):
+
+1. **Transient Processing** - Your data is sent to the AI service for processing
+2. **Immediate Response** - Results are returned and stored in your tenant's database
+3. **No Retention for Training** - The AI provider does not retain your data for model improvement
+4. **Audit Logging** - All AI interactions are logged within your tenant for compliance
+
+We use enterprise-grade AI services with data processing agreements (DPAs) that contractually prohibit using customer data for model training.
+
+---
+
+## Data Isolation
+
+### Multi-Tenant Architecture
+
+Wovser.AI uses a multi-tenant architecture with strict data isolation:
+
+- **Logical Separation** - Each tenant's data is isolated at the database level
+- **Access Controls** - Users can only access data within their organization
+- **API Scoping** - All API requests are scoped to the authenticated tenant
+- **No Cross-Tenant Access** - There is no mechanism to access another tenant's data
+
+### Data Residency
+
+- Data is stored in secure, SOC 2 compliant data centers
+- Enterprise customers can request specific geographic data residency
+- Backups are encrypted and stored in the same region as primary data
+
+---
+
+## Data Retention
+
+### Default Retention Periods
+
+| Data Type | Retention Period |
+|-----------|-----------------|
+| Assessment responses | Configurable (default: indefinite) |
+| Code submissions | Configurable (default: indefinite) |
+| Session recordings | 90 days |
+| Proctoring video | 30 days after session |
+| Audit logs | 1 year |
+| Usage analytics | 2 years |
+
+### Data Deletion
+
+Organizations can:
+- Delete individual candidate data (GDPR right to erasure)
+- Purge old assessment data based on age
+- Request full account deletion
+- Export all data before deletion
+
+---
+
+## Security Measures
+
+### Encryption
+
+- **In Transit** - All data encrypted via TLS 1.3
+- **At Rest** - AES-256 encryption for stored data
+- **API Keys** - Encrypted and hashed before storage
+
+### Access Controls
+
+- Role-based access control (RBAC)
+- SSO integration (SAML 2.0, OAuth 2.0/OIDC)
+- SCIM provisioning for automated user management
+- IP allowlisting (Enterprise plans)
+
+### Monitoring
+
+- Real-time security monitoring
+- Automated threat detection
+- Regular security audits and penetration testing
+- Incident response procedures
+
+---
+
+## Compliance
+
+Wovser.AI supports compliance with:
+
+- **GDPR** - EU data protection regulation
+- **CCPA** - California Consumer Privacy Act
+- **SOC 2 Type II** - Security and availability controls
+- **FERPA** - Educational records privacy (for academic deployments)
+
+### Data Processing Agreements
+
+Enterprise customers can request:
+- Custom DPAs
+- Business Associate Agreements (BAA) for healthcare
+- Specific compliance certifications
+
+---
+
+## Candidate Privacy
+
+### For Assessment Takers
+
+When candidates participate in assessments:
+
+- Their responses are only visible to authorized host users
+- Personal information is protected under the organization's privacy policy
+- They can request access to their own data
+- Results are not shared with third parties without consent
+
+### Proctoring Transparency
+
+For proctored assessments:
+- Candidates are informed before proctoring begins
+- Clear disclosure of what is monitored (video, screen, etc.)
+- AI analysis is used for flagging only—humans make final decisions
+- Proctoring data is deleted after the retention period
+
+---
+
+## Your Rights
+
+### Organizations
+
+- Full ownership of all data created within your tenant
+- Right to export all data at any time
+- Right to delete your account and all associated data
+- Transparency in how your data is processed
+
+### Individuals (Candidates)
+
+Under applicable privacy laws, individuals may have the right to:
+- Access their personal data
+- Correct inaccurate data
+- Request deletion of their data
+- Object to certain processing
+- Data portability
+
+To exercise these rights, contact your organization's administrator or reach out to us at privacy@wovser.ai.
+
+---
+
+## Questions?
+
+For privacy-related inquiries:
+- Email: privacy@wovser.ai
+- See our full [Privacy Policy](https://wovser.ai/privacy)
+- Contact your account manager for enterprise privacy discussions

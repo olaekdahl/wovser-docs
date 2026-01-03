@@ -1,0 +1,218 @@
+# AI-Powered Features
+
+Wovser.AI leverages artificial intelligence throughout the platform to enhance the assessment experience for both hosts and players. This page documents all AI-powered features and where they are used.
+
+import { Callout, Cards, Card } from 'nextra/components'
+
+<Callout type="info">
+  AI features are designed to augment human judgment, not replace it. All AI-generated content can be reviewed and edited by hosts before use.
+</Callout>
+
+## Overview
+
+AI is integrated into multiple areas of the platform:
+
+<Cards>
+  <Card title="Content Generation" href="#content-generation" />
+  <Card title="Code Evaluation" href="#code-evaluation" />
+  <Card title="Learning Analytics" href="#learning-analytics" />
+  <Card title="Proctoring" href="#proctoring" />
+</Cards>
+
+---
+
+## Content Generation
+
+### Quiz Generation
+
+**Where:** Create Quiz → "Generate with AI" option
+
+AI can generate complete quizzes from a topic or prompt. Simply describe what you want to assess, and the system will create:
+- Relevant questions with multiple choice options
+- Correct answers with explanations
+- Appropriate difficulty levels
+- Time limits per question
+
+**Example prompts:**
+- "Python fundamentals for beginners"
+- "AWS Solutions Architect concepts"
+- "JavaScript ES6+ features"
+
+### AI Question Generator
+
+**Where:** Question Bank → "AI Generate" button
+
+**Plan Required:** Enterprise or Ultimate
+
+A more advanced question generation tool that can create assessment questions from:
+- **Topics** - Describe a subject area
+- **Documents** - Upload PDFs, text, or paste content
+- **Job Descriptions** - Generate role-specific questions
+
+Features include:
+- Bloom's Taxonomy level targeting
+- Difficulty distribution control
+- Explanation generation
+- Automatic tagging
+
+### Code Challenge Generation
+
+**Where:** Code Challenges → "Generate with AI" option
+
+AI can generate complete coding challenges including:
+- Problem description and requirements
+- Starter code templates
+- Expected input/output examples
+- Difficulty calibration
+
+---
+
+## Code Evaluation
+
+### Code Review (Basic)
+
+**Where:** Code challenge submissions with AI review mode enabled
+
+When a player submits code for a challenge configured with AI review mode, the system automatically evaluates:
+- **Correctness** - Does the code solve the problem?
+- **Syntax** - Is the code free of errors?
+- **Logic** - Does the approach make sense?
+
+Returns a pass/fail result with feedback explaining the evaluation.
+
+### AI Code Review Agent
+
+**Where:** Enterprise features → Code Review Agent
+
+**Plan Required:** Enterprise or Ultimate
+
+An advanced code analysis agent that provides comprehensive feedback:
+
+| Analysis Type | What It Checks |
+|--------------|----------------|
+| **Correctness** | Logic errors, edge cases, algorithm validity |
+| **Security** | SQL injection, XSS, secrets exposure, input validation |
+| **Performance** | Time complexity, memory usage, optimization opportunities |
+| **Best Practices** | Naming conventions, code organization, design patterns |
+| **Maintainability** | Readability, documentation, code structure |
+
+The agent considers the seniority level (Junior/Mid/Senior/Staff) when providing feedback, adjusting expectations and recommendations accordingly.
+
+### Code Progression Analysis
+
+**Where:** Live code challenges with workspace sessions
+
+During live coding sessions, AI analyzes the progression of a candidate's work:
+- How they approach the problem
+- Their debugging strategy
+- Code evolution over time
+- Problem-solving patterns
+
+This provides insights beyond just the final submission.
+
+---
+
+## Learning Analytics
+
+### AI Candidate Insights
+
+**Where:** Analytics → Candidate Profile → "Generate Insights"
+
+**Plan Required:** Enterprise or Ultimate
+
+Generates comprehensive AI-powered summaries of a candidate's performance across all their assessments:
+- Strengths and weaknesses analysis
+- Skill pattern identification
+- Comparison to role requirements
+- Hiring recommendations
+- Growth potential assessment
+
+### Learner Evaluation
+
+**Where:** Learning mode assessments and progress reports
+
+For learning-focused deployments, AI evaluates learner responses and provides:
+- Detailed feedback on answers
+- Bloom's Taxonomy level analysis
+- Knowledge gap identification
+- Personalized recommendations
+- Progress tracking insights
+
+---
+
+## Proctoring
+
+### Proctoring Vision Analysis
+
+**Where:** Proctored assessments with video monitoring enabled
+
+**Plan Required:** Professional or higher with proctoring add-on
+
+AI analyzes video frames during proctored sessions to detect:
+- Multiple faces in frame
+- Face not visible / looking away
+- Potential phone or device usage
+- Unauthorized materials
+- Environmental anomalies
+
+<Callout type="warning">
+  Vision analysis flags potential violations for human review. All flagged incidents should be reviewed by a proctor before taking action.
+</Callout>
+
+---
+
+## Plan Availability
+
+| Feature | Starter | Professional | Enterprise | Ultimate |
+|---------|---------|--------------|------------|----------|
+| Quiz Generation | ✓ | ✓ | ✓ | ✓ |
+| Code Review (Basic) | ✓ | ✓ | ✓ | ✓ |
+| Code Challenge Generation | ✓ | ✓ | ✓ | ✓ |
+| Code Progression Analysis | — | ✓ | ✓ | ✓ |
+| AI Question Generator | — | — | ✓ | ✓ |
+| AI Code Review Agent | — | — | ✓ | ✓ |
+| AI Candidate Insights | — | — | ✓ | ✓ |
+| Learner Evaluation | — | ✓ | ✓ | ✓ |
+| Proctoring Vision | — | Add-on | ✓ | ✓ |
+
+---
+
+## Best Practices
+
+### Content Generation
+
+1. **Review generated content** - Always review AI-generated questions before using them in assessments
+2. **Provide context** - More detailed prompts produce better results
+3. **Iterate** - Generate multiple variations and pick the best questions
+4. **Edit freely** - Use AI as a starting point, then customize
+
+### Code Evaluation
+
+1. **Combine methods** - Use AI review alongside unit tests for best results
+2. **Set expectations** - Choose appropriate seniority level for fair evaluation
+3. **Review edge cases** - AI may miss domain-specific requirements
+4. **Use progression data** - Don't just evaluate the final submission
+
+### Candidate Insights
+
+1. **Multiple data points** - Insights are more accurate with more assessment data
+2. **Context matters** - Consider the candidate's background when reviewing insights
+3. **Human judgment** - Use AI insights as one input among many in hiring decisions
+
+---
+
+## Privacy & Data
+
+import { Callout as PrivacyCallout } from 'nextra/components'
+
+<PrivacyCallout type="info" emoji="🔒">
+  **Your data is never used to train AI models.** All tenant data—including code submissions, assessment responses, and candidate information—is processed for real-time features only and is never used to train, fine-tune, or improve any AI models.
+</PrivacyCallout>
+
+- **No model training** - Your data is never used to train AI models
+- **Transient processing** - Data is sent to AI services for real-time processing only
+- **Enterprise-grade security** - Processing uses secure infrastructure with DPAs prohibiting data retention for training
+- **Audit logging** - All AI interactions are logged within your tenant for compliance
+- **Configurable retention** - Data retention follows your organization's configured policies
+
+For complete details, see our [Privacy & Data Protection](/support/privacy) documentation.
