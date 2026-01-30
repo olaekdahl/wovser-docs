@@ -53,11 +53,42 @@ Self-paced evaluations for measuring skills. Features include:
 
 ### Code Challenges
 Programming tasks completed in browser-based coding environments. Features include:
-- **17 supported languages**: JavaScript, TypeScript, Python, Java, Go, Rust, C++, C#, Ruby, SQL, Shell, PowerShell
+- **17+ supported languages**: JavaScript, TypeScript, Python, Java, Go, Rust, C++, C#, Ruby, Lua, SQL, Shell, PowerShell
 - **Web frameworks with live preview**: React, Vue, Angular, Svelte, and vanilla HTML/CSS/JS
 - Real terminal access via VS Code in the browser
 - Test case validation
 - Workspace persistence
+
+## Execution Technologies
+
+<Callout type="info">
+  Wovser.AI uses multiple execution technologies to provide the best experience for each language.
+</Callout>
+
+### WASM (WebAssembly)
+Code runs directly in the browser using WebAssembly runtimes:
+- **Instant execution** - No server round-trip needed
+- **Languages**: Python (Pyodide), JavaScript/TypeScript (QuickJS + esbuild), Ruby (ruby.wasm), Lua (Wasmoon)
+- **Use case**: Algorithm challenges, single-file exercises
+
+### WebContainers
+Full Node.js runtime in the browser (by StackBlitz):
+- **npm packages** - Install and use any npm package
+- **Multi-file projects** - Full file system support
+- **Frameworks**: React, Vue, Angular, Svelte, Node.js
+- **Use case**: Full-stack projects, framework exercises
+
+### Sandpack
+CodeSandbox's browser-based runtime:
+- **Live preview** - See changes instantly
+- **Console output** - Debug JavaScript in the browser
+- **Use case**: HTML/CSS/JavaScript fundamentals
+
+### Cloud Execution
+Kubernetes-based containers for advanced languages:
+- **Full toolchains** - Compilers, package managers, debuggers
+- **Languages**: Java, Go, Rust, C++, C#
+- **Use case**: Complex build requirements, large projects
 
 ## Sessions & Participation
 

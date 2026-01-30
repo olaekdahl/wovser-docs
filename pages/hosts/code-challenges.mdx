@@ -4,6 +4,58 @@ Create programming assessments with browser-based coding environments.
 
 import { Callout, Tabs, Steps } from 'nextra/components'
 
+## Execution Environments
+
+Wovser.AI offers three execution technologies optimized for different use cases:
+
+<Callout type="info">
+  **Browser-based execution** (WASM, WebContainers, Sandpack) runs code directly in the participant's browser - no cloud infrastructure needed. This means instant execution and zero infrastructure costs.
+</Callout>
+
+### WASM Runtimes (Single-File Challenges)
+
+Best for algorithm challenges and single-file coding exercises.
+
+| Language | Runtime | Features | Badge |
+|----------|---------|----------|-------|
+| Python | Pyodide | Full Python 3.11 with pytest | 🟢 WASM |
+| JavaScript | QuickJS | ES2023 support | 🟢 WASM |
+| TypeScript | esbuild + QuickJS | Full TS transpilation | 🟢 WASM |
+| Ruby | ruby.wasm | Ruby 3.2 | 🟢 WASM |
+| Lua | Wasmoon | Lua 5.4 | 🟢 WASM |
+
+### WebContainers (Full-Stack Projects)
+
+Best for framework-based projects with multiple files and npm packages.
+
+| Framework | Template | Features | Badge |
+|-----------|----------|----------|-------|
+| React | Vite + TS | Hot reload, npm packages | 🟣 WebContainer |
+| Vue | Vite + TS | Composition API, SFC | 🟣 WebContainer |
+| Angular | Angular CLI | Full CLI, dependencies | 🟣 WebContainer |
+| Svelte | SvelteKit | Compiled framework | 🟣 WebContainer |
+| Node.js | Express | Full Node.js runtime | 🟣 WebContainer |
+
+### Sandpack (Vanilla Web)
+
+Best for HTML/CSS/JavaScript fundamentals and web basics.
+
+| Runtime | Features | Badge |
+|---------|----------|-------|
+| HTML/CSS/JS | Live preview, console, file explorer | 🔵 Sandpack |
+
+### Cloud Execution (Advanced Languages)
+
+For languages requiring full container environments.
+
+| Language | Version | Features | Badge |
+|----------|---------|----------|-------|
+| Java | 17+ | Full JDK, Maven/Gradle | 🔵 Cloud |
+| Go | 1.21+ | Full Go toolchain | 🔵 Cloud |
+| Rust | Latest | Cargo, crates | 🔵 Cloud |
+| C++ | GCC 12+ | Full compiler toolchain | 🔵 Cloud |
+| C# | .NET 8 | Full .NET SDK | 🔵 Cloud |
+
 ## Supported Languages
 
 Wovser.AI supports a comprehensive range of programming languages and web frameworks:
