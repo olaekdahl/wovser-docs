@@ -2,94 +2,207 @@
 
 Create programming assessments with browser-based coding environments.
 
-import { Callout, Tabs, Steps } from 'nextra/components'
+import { Callout, Tabs, Steps, Badge } from 'nextra/components'
+
+export const WasmBadge = () => <span className="inline-flex items-center rounded-full bg-emerald-500/20 px-2 py-0.5 text-xs font-medium text-emerald-400 ring-1 ring-inset ring-emerald-500/30">WASM</span>
+
+export const WebContainerBadge = () => <span className="inline-flex items-center rounded-full bg-purple-500/20 px-2 py-0.5 text-xs font-medium text-purple-400 ring-1 ring-inset ring-purple-500/30">WebContainer</span>
+
+export const SandpackBadge = () => <span className="inline-flex items-center rounded-full bg-cyan-500/20 px-2 py-0.5 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/30">Sandpack</span>
+
+export const CloudBadge = () => <span className="inline-flex items-center rounded-full bg-blue-500/20 px-2 py-0.5 text-xs font-medium text-blue-400 ring-1 ring-inset ring-blue-500/30">Cloud</span>
 
 ## Execution Environments
 
-Wovser.AI offers three execution technologies optimized for different use cases:
+Wovser.AI provides **four execution technologies** optimized for different use cases. Many languages support **multiple execution modes**, giving you flexibility to choose between browser-based instant execution or cloud containers with full custom control.
 
 <Callout type="info">
-  **Browser-based execution** (WASM, WebContainers, Sandpack) runs code directly in the participant's browser - no cloud infrastructure needed. This means instant execution and zero infrastructure costs.
+  **Browser-based execution** (<WasmBadge />, <WebContainerBadge />, <SandpackBadge />) runs code directly in the participant's browser—no cloud infrastructure needed. This means **instant execution**, **zero infrastructure costs**, and **unlimited concurrency**.
 </Callout>
 
-### WASM Runtimes (Single-File Challenges)
+<Callout type="default">
+  **Cloud execution** (<CloudBadge />) runs code in isolated Kubernetes containers, providing **complete custom control** over the runtime environment, including custom runtimes, system packages, and advanced configurations.
+</Callout>
 
-Best for algorithm challenges and single-file coding exercises.
+### Runtime Environment Comparison
 
-| Language | Runtime | Features | Badge |
-|----------|---------|----------|-------|
-| Python | Pyodide | Full Python 3.11 with pytest | 🟢 WASM |
-| JavaScript | QuickJS | ES2023 support | 🟢 WASM |
-| TypeScript | esbuild + QuickJS | Full TS transpilation | 🟢 WASM |
-| Ruby | ruby.wasm | Ruby 3.2 | 🟢 WASM |
-| Lua | Wasmoon | Lua 5.4 | 🟢 WASM |
+| Environment | Best For | Execution Location | Cost | Customization |
+|-------------|----------|-------------------|------|---------------|
+| <WasmBadge /> WASM | Algorithms, single-file challenges | Browser | Free | Language-specific |
+| <WebContainerBadge /> WebContainer | Full-stack web frameworks | Browser | Free | npm packages |
+| <SandpackBadge /> Sandpack | HTML/CSS/JS fundamentals | Browser | Free | Basic web only |
+| <CloudBadge /> Cloud | System languages, custom runtimes | Kubernetes | Per-use | **Full container control** |
 
-### WebContainers (Full-Stack Projects)
+---
 
-Best for framework-based projects with multiple files and npm packages.
+### <WasmBadge /> WASM Runtimes (Single-File Challenges)
 
-| Framework | Template | Features | Badge |
-|-----------|----------|----------|-------|
-| React | Vite + TS | Hot reload, npm packages | 🟣 WebContainer |
-| Vue | Vite + TS | Composition API, SFC | 🟣 WebContainer |
-| Angular | Angular CLI | Full CLI, dependencies | 🟣 WebContainer |
-| Svelte | SvelteKit | Compiled framework | 🟣 WebContainer |
-| Node.js | Express | Full Node.js runtime | 🟣 WebContainer |
+Best for algorithm challenges and single-file coding exercises. Code runs **instantly in the browser** via WebAssembly.
 
-### Sandpack (Vanilla Web)
-
-Best for HTML/CSS/JavaScript fundamentals and web basics.
-
-| Runtime | Features | Badge |
-|---------|----------|-------|
-| HTML/CSS/JS | Live preview, console, file explorer | 🔵 Sandpack |
-
-### Cloud Execution (Advanced Languages)
-
-For languages requiring full container environments.
-
-| Language | Version | Features | Badge |
-|----------|---------|----------|-------|
-| Java | 17+ | Full JDK, Maven/Gradle | 🔵 Cloud |
-| Go | 1.21+ | Full Go toolchain | 🔵 Cloud |
-| Rust | Latest | Cargo, crates | 🔵 Cloud |
-| C++ | GCC 12+ | Full compiler toolchain | 🔵 Cloud |
-| C# | .NET 8 | Full .NET SDK | 🔵 Cloud |
-
-## Supported Languages
-
-Wovser.AI supports a comprehensive range of programming languages and web frameworks:
-
-### Backend & General Purpose Languages
-
-| Language | Version | Use Cases |
-|----------|---------|-----------|
-| JavaScript | ES2022+ | Web development, Node.js |
-| TypeScript | 5.x | Type-safe JavaScript |
-| Python | 3.11+ | General programming, data science |
-| Java | 17+ | Enterprise, Android |
-| Go | 1.21+ | Systems programming, cloud |
-| Rust | Latest | Systems programming, performance |
-| C++ | GCC 12+ | Systems, embedded, game dev |
-| C# | .NET 8 | Enterprise, game dev, cross-platform |
-| Ruby | 3.x | Web development, scripting |
-| SQL | SQLite/PostgreSQL | Database queries, data manipulation |
-| Shell | Bash 5.x | DevOps, automation |
-| PowerShell | 7.x | Windows automation, scripting |
-
-### Web Frameworks (with Live Preview)
+| Language | Runtime | Features | Environment |
+|----------|---------|----------|-------------|
+| Python | Pyodide (CPython to WASM) | Full Python 3.11 with pytest | <WasmBadge /> <CloudBadge /> |
+| JavaScript | Browser Sandbox | ES2023 support, native execution | <WasmBadge /> <CloudBadge /> |
+| TypeScript | esbuild-wasm transpilation | Full TS 5.x, type checking | <WasmBadge /> <CloudBadge /> |
+| Ruby | ruby.wasm | Ruby 3.2 | <WasmBadge /> <CloudBadge /> |
+| Lua | Wasmoon | Lua 5.4 | <WasmBadge /> <CloudBadge /> |
 
 <Callout type="info">
-  Web framework challenges include **live preview URLs** where participants can see their application running in real-time alongside the code editor.
+  All WASM languages **also support Cloud execution**. Choose WASM for instant, zero-cost execution, or Cloud when you need custom packages or full system access.
 </Callout>
 
-| Framework | Version | Features |
-|-----------|---------|----------|
-| React | 18+ | JSX/TSX, hooks, component architecture |
-| Vue | 3.x | Single-file components, Composition API |
-| Angular | 17+ | TypeScript, dependency injection, CLI |
-| Svelte | 4+ | Compiled framework, reactive statements |
-| Web (HTML/CSS/JS) | Latest | Vanilla web development, no framework |
+---
+
+### <WebContainerBadge /> WebContainers (Full-Stack Projects)
+
+Best for framework-based projects with multiple files and npm packages. Uses **StackBlitz WebContainers** to run a full Node.js environment in the browser.
+
+| Framework | Template | Features | Environment |
+|-----------|----------|----------|-------------|
+| React | Vite + TypeScript | Hot reload, npm packages, Vitest | <WebContainerBadge /> <CloudBadge /> |
+| Vue | Vite + TypeScript | Composition API, SFCs, Vitest | <WebContainerBadge /> <CloudBadge /> |
+| Angular | Angular CLI | Full CLI, RxJS, testing | <WebContainerBadge /> <CloudBadge /> |
+| Svelte | SvelteKit | Compiled framework, routing | <WebContainerBadge /> <CloudBadge /> |
+| Node.js | Express | Full Node.js runtime, npm | <WebContainerBadge /> <CloudBadge /> |
+
+**WebContainer Features:**
+- Full Node.js runtime in browser
+- npm package installation
+- File system operations
+- Dev server with hot reload
+- Test execution (Vitest, Jest)
+
+<Callout type="info">
+  All web frameworks **also support Cloud execution**. Choose WebContainer for instant browser-based preview, or Cloud when you need specific Node versions, native modules, or custom server configurations.
+</Callout>
+
+---
+
+### <SandpackBadge /> Sandpack (Vanilla Web)
+
+Best for HTML/CSS/JavaScript fundamentals and web basics. Powered by **CodeSandbox's Sandpack** library.
+
+| Runtime | Features | Environment |
+|---------|----------|-------------|
+| Web (HTML/CSS/JS) | Live preview, console, file explorer | <SandpackBadge /> only |
+
+**Sandpack Features:**
+- Multi-file editing
+- Instant live preview
+- Console output
+- File explorer
+- Great for DOM manipulation exercises
+
+---
+
+### <CloudBadge /> Cloud Execution (Full Container Control)
+
+For languages requiring **full container environments** or when you need **complete custom control** over the runtime. Code runs in isolated Kubernetes pods with configurable resources.
+
+| Language | Version | Features | Environment |
+|----------|---------|----------|-------------|
+| Java | 17+ | Full JDK, Maven/Gradle | <CloudBadge /> only |
+| Go | 1.21+ | Full Go toolchain, modules | <CloudBadge /> only |
+| Rust | Latest stable | Cargo, crates.io | <CloudBadge /> only |
+| C++ | GCC 12+ | Full compiler toolchain, CMake | <CloudBadge /> only |
+| C# | .NET 8 | Full .NET SDK, NuGet | <CloudBadge /> only |
+| Swift | 5.9+ | Full Swift toolchain | <CloudBadge /> only |
+| PHP | 8.2+ | Composer, extensions | <CloudBadge /> only |
+| Shell/Bash | 5.x | DevOps, automation scripts | <CloudBadge /> only |
+| PowerShell | 7.x | Windows automation, scripting | <CloudBadge /> only |
+| SQL | SQLite/PostgreSQL | Database queries, data manipulation | <CloudBadge /> only |
+
+<Callout type="warning">
+  **Why Cloud-only?** Languages like Java, Go, Rust, and C++ require full compilation toolchains, system libraries, and complex runtimes that cannot run in browser-based WASM environments. Cloud containers provide the complete development environment needed.
+</Callout>
+
+**Cloud Execution Benefits:**
+- **Custom runtimes**: Specify exact language versions
+- **System packages**: Install any Linux packages needed
+- **Native modules**: Full support for compiled dependencies
+- **Resource control**: Configure CPU, memory, and timeout limits
+- **Isolation**: Each execution runs in a fresh, isolated container
+- **Real terminal**: Full terminal access for debugging
+
+---
+
+## Complete Language & Environment Matrix
+
+This matrix shows all supported languages and which execution environments they support:
+
+| Language | <WasmBadge /> | <WebContainerBadge /> | <SandpackBadge /> | <CloudBadge /> | Notes |
+|----------|:----:|:-----------:|:--------:|:-----:|-------|
+| **Python** | ✅ | — | — | ✅ | WASM via Pyodide, Cloud for custom packages |
+| **JavaScript** | ✅ | — | — | ✅ | Browser sandbox, Cloud for Node.js APIs |
+| **TypeScript** | ✅ | — | — | ✅ | esbuild transpilation in browser |
+| **Ruby** | ✅ | — | — | ✅ | ruby.wasm for browser execution |
+| **Lua** | ✅ | — | — | ✅ | Wasmoon runtime |
+| **React** | — | ✅ | — | ✅ | Vite + TypeScript template |
+| **Vue** | — | ✅ | — | ✅ | Vite + TypeScript template |
+| **Angular** | — | ✅ | — | ✅ | Angular CLI template |
+| **Svelte** | — | ✅ | — | ✅ | SvelteKit template |
+| **Node.js** | — | ✅ | — | ✅ | Express template |
+| **Web (HTML/CSS/JS)** | — | — | ✅ | — | Sandpack only |
+| **Java** | — | — | — | ✅ | Cloud only - JDK required |
+| **Go** | — | — | — | ✅ | Cloud only - Go toolchain |
+| **Rust** | — | — | — | ✅ | Cloud only - Cargo required |
+| **C++** | — | — | — | ✅ | Cloud only - GCC/CMake |
+| **C#** | — | — | — | ✅ | Cloud only - .NET SDK |
+| **Swift** | — | — | — | ✅ | Cloud only - Swift toolchain |
+| **PHP** | — | — | — | ✅ | Cloud only - Composer |
+| **Shell/Bash** | — | — | — | ✅ | Cloud only - Linux shell |
+| **PowerShell** | — | — | — | ✅ | Cloud only - pwsh |
+| **SQL** | — | — | — | ✅ | Cloud only - SQLite/PostgreSQL |
+
+---
+
+## Choosing the Right Environment
+
+### When to use <WasmBadge /> WASM
+- ✅ Algorithm and data structure challenges
+- ✅ Single-file coding exercises
+- ✅ Quick assessments requiring instant feedback
+- ✅ High-concurrency scenarios (unlimited parallel executions)
+- ✅ Cost-sensitive deployments
+
+### When to use <WebContainerBadge /> WebContainer
+- ✅ React, Vue, Angular, Svelte projects
+- ✅ Multi-file web applications
+- ✅ npm package usage (React Query, Axios, etc.)
+- ✅ Live preview during development
+- ✅ Frontend framework interviews
+
+### When to use <SandpackBadge /> Sandpack
+- ✅ HTML/CSS fundamentals
+- ✅ DOM manipulation exercises
+- ✅ Basic JavaScript challenges
+- ✅ Web design assessments
+
+### When to use <CloudBadge /> Cloud
+- ✅ System programming languages (Java, Go, Rust, C++)
+- ✅ Custom runtime versions or configurations
+- ✅ Native dependencies or system packages
+- ✅ Full terminal access requirements
+- ✅ Backend/API development challenges
+- ✅ Database connectivity (SQL challenges)
+
+---
+
+## Web Frameworks (with Live Preview)
+
+<Callout type="info">
+  Web framework challenges (<WebContainerBadge /> and <SandpackBadge />) include **live preview URLs** where participants can see their application running in real-time alongside the code editor.
+</Callout>
+
+| Framework | Version | Features | Environment |
+|-----------|---------|----------|-------------|
+| React | 18+ | JSX/TSX, hooks, component architecture | <WebContainerBadge /> <CloudBadge /> |
+| Vue | 3.x | Single-file components, Composition API | <WebContainerBadge /> <CloudBadge /> |
+| Angular | 17+ | TypeScript, dependency injection, CLI | <WebContainerBadge /> <CloudBadge /> |
+| Svelte | 4+ | Compiled framework, reactive statements | <WebContainerBadge /> <CloudBadge /> |
+| Web (HTML/CSS/JS) | Latest | Vanilla web development, no framework | <SandpackBadge /> |
+
+---
 
 ## Creating a Code Challenge
 
@@ -114,7 +227,8 @@ Include:
 ### Set Up the Workspace
 
 Configure the coding environment:
-- Select supported language(s)
+- Select supported language(s) and execution environment
+- Choose <WasmBadge /> for browser execution or <CloudBadge /> for container control
 - Provide starter code (optional)
 - Include helper files if needed
 - Configure terminal access
@@ -149,14 +263,26 @@ Set how submissions are evaluated:
 ## Workspace Features
 
 ### Real Terminal Access
-Participants have access to a full terminal for:
-- Running their code
-- Installing packages (within limits)
-- Debugging with standard tools
-- Testing edge cases
+
+<Tabs items={['Browser Runtimes', 'Cloud Containers']}>
+  <Tabs.Tab>
+    **WASM, WebContainer, and Sandpack** provide simulated terminal output:
+    - View execution results and test output
+    - Console logging and debugging
+    - Package installation (WebContainer only)
+  </Tabs.Tab>
+  <Tabs.Tab>
+    **Cloud execution** provides full terminal access:
+    - Complete Linux shell environment
+    - Run any shell commands
+    - Install system packages
+    - Debug with gdb, lldb, and other tools
+    - Access build tools (make, cmake, cargo, etc.)
+  </Tabs.Tab>
+</Tabs>
 
 <Callout type="info">
-  Terminal sessions are sandboxed for security. Network access and system modifications are restricted.
+  All terminal sessions are sandboxed for security. Network access and system modifications are restricted to the workspace.
 </Callout>
 
 ### File System
