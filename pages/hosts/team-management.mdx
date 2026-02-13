@@ -1,0 +1,113 @@
+# Team Management
+
+Invite team members, assign roles, and control who can access what across your organization.
+
+import { Callout, Steps } from 'nextra/components'
+
+## Roles
+
+Wovser.AI uses four roles to control access within your organization:
+
+| Role | What They Can Do |
+|------|-----------------|
+| **Owner** | Full access to everything, including billing, settings, and member management. Can delete the organization. |
+| **Admin** | Manage content, projects, settings, and integrations. Cannot access billing or modify Owners/other Admins. |
+| **Member** | Create and manage content within assigned projects. Cannot access organization settings or billing. |
+| **Learner** | Take assessments and view their own results. No creation or management access. |
+
+<Callout type="info">
+  Every organization has at least one Owner. The person who creates the organization is automatically the Owner.
+</Callout>
+
+## Inviting Team Members
+
+<Steps>
+
+### Open Team Settings
+
+Navigate to **Settings** → **Team Members** in your dashboard.
+
+### Click Invite Members
+
+Click the **Invite members** button to open the invitation form.
+
+### Add Invitees
+
+For each person you want to invite, enter their **email address** and select a **role** (Admin, Member, or Learner).
+
+You can add multiple invitations at once, or use **Import CSV** to bulk-invite from a file with the format:
+
+```
+email,role
+jane@example.com,MEMBER
+bob@example.com,LEARNER
+```
+
+### Add a Message (Optional)
+
+Include a custom message that will appear in the invitation email (up to 500 characters).
+
+### Send Invites
+
+Click **Send invites**. Each invitee receives an email with a link to join your organization. New users get an account created automatically with passwordless sign-in.
+
+</Steps>
+
+<Callout type="warning">
+  Invitations expire after **7 days**. You can resend an invitation from the team members list if it expires.
+</Callout>
+
+## Managing Members
+
+From the **Team Members** page, you can filter and search your team by role, status, name, or email.
+
+### Member Actions
+
+Click the menu button on any member row to access these actions:
+
+| Action | When Available | What It Does |
+|--------|---------------|-------------|
+| **Change role** | Active or invited members (not Owners) | Assign a different role |
+| **Resend invite** | Invited members only | Send a new invitation email |
+| **Suspend** | Active members (not Owners) | Temporarily revoke access |
+| **Reactivate** | Suspended members | Restore access |
+| **Remove** | Any member (not Owners) | Permanently remove from organization |
+
+<Callout type="info">
+  Admins cannot modify other Admins or the Owner. Only the Owner can change an Admin's role or remove them.
+</Callout>
+
+## Member Statuses
+
+| Status | Meaning |
+|--------|---------|
+| **Invited** | Invitation sent, waiting for the person to accept |
+| **Active** | Member has accepted and can access the organization |
+| **Suspended** | Temporarily locked out — cannot log in until reactivated |
+| **Removed** | No longer part of the organization |
+
+## Permission Details
+
+Here's a detailed breakdown of what each role can access:
+
+| Feature | Owner | Admin | Member | Learner |
+|---------|-------|-------|--------|---------|
+| Create quizzes & assessments | Yes | Yes | Within projects | No |
+| Create video assessments | Yes | Yes | Within projects | No |
+| Create code challenges | Yes | Yes | Within projects | No |
+| View all submissions | Yes | Yes | Within projects | Own only |
+| Manage question bank | Yes | Yes | Yes | No |
+| Run live sessions | Yes | Yes | Within projects | No |
+| Take assessments | Yes | Yes | Yes | Yes |
+| Manage team members | Yes | Yes | No | No |
+| Organization settings | Yes | Yes | No | No |
+| Integrations & SSO | Yes | Yes | No | No |
+| Billing & quotas | Yes | No | No | No |
+| Delete organization | Yes | No | No | No |
+
+## Tips
+
+- **Start with Learner role** for assessment takers — you can always upgrade their role later
+- **Use Member role** for content creators who only need access to specific projects
+- **Reserve Admin** for trusted team leads who need to manage settings and integrations
+- **Bulk import** saves time when onboarding large groups — prepare a CSV with emails and roles

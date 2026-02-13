@@ -14,26 +14,18 @@ Wovser.AI is a multi-tenant platform. Each **organization** (tenant) has its own
 
 import { Callout } from 'nextra/components'
 
-### Host
-Hosts create and manage content. They can:
-- Create quizzes, assessments, and code challenges
-- Start and manage live sessions
-- View analytics and reports
-- Manage question banks
+Wovser.AI uses four roles to control access within an organization:
 
-### Player
-Players participate in assessments. They can:
-- Join live quiz sessions
-- Complete assessments
-- Participate in code challenges
-- View their results and progress
+| Role | Description |
+|------|------------|
+| **Owner** | Full access to everything — billing, settings, member management, and content. Every organization has at least one Owner. |
+| **Admin** | Manage content, projects, settings, and integrations. Cannot access billing or modify Owners. |
+| **Member** | Create and manage content within assigned projects. Cannot access organization settings. |
+| **Learner** | Take assessments and view own results. No creation or management access. |
 
-### Admin
-Organization administrators have full control:
-- Manage users and roles
-- Configure organization settings
-- Access billing and quotas
-- Set up integrations
+<Callout type="info">
+  See [Team Management](/hosts/team-management) for details on inviting members and managing roles.
+</Callout>
 
 ## Content Types
 
@@ -50,6 +42,14 @@ Self-paced evaluations for measuring skills. Features include:
 - Multiple attempts (configurable)
 - Automated scoring
 - Detailed feedback
+
+### Video Assessments
+Recorded video responses evaluated with AI. Features include:
+- Questions answered on camera with configurable time limits
+- AI-powered transcription (speech-to-text)
+- Keyword and topic matching with synonym support
+- Speaking analytics (pace, filler words, sentiment)
+- Automated scoring with manual review option
 
 ### Code Challenges
 Programming tasks completed in browser-based coding environments. Features include:
