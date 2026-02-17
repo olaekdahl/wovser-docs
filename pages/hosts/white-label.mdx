@@ -1,0 +1,78 @@
+# White-Label & Custom Domains
+
+Make Wovser.AI look like your own platform with custom branding, themes, and domains.
+
+import { Callout } from 'nextra/components'
+
+<Callout type="info">
+  White-label features are available on the **Enterprise** plan and above.
+</Callout>
+
+## Overview
+
+Enterprise customers can fully customize the Wovser.AI experience to match their brand identity. From custom domains to themed interfaces, your learners and candidates interact with a platform that feels like your own.
+
+## Custom Domains
+
+Host assessments on your own domain (e.g., `assessments.yourcompany.com`) instead of the default Wovser.AI URLs.
+
+### How It Works
+
+1. Navigate to **Organization Settings → White-Label → Custom Domain**
+2. Enter your desired domain (e.g., `assessments.yourcompany.com`)
+3. Add the provided DNS records to your domain registrar
+4. The system automatically provisions an SSL certificate via Cloudflare
+5. Once DNS propagates and the certificate is issued, your custom domain is active
+
+<Callout type="warning">
+  DNS propagation can take up to 48 hours. SSL certificate provisioning happens automatically once DNS is verified.
+</Callout>
+
+### What Changes
+
+With a custom domain active:
+- All assessment URLs use your domain
+- Share links and QR codes point to your domain
+- Email invitations reference your domain
+- The browser address bar shows your brand
+
+## Branding
+
+Customize the visual identity of your Wovser.AI instance:
+
+| Setting | Description |
+|---------|-------------|
+| **Company Name** | Displayed in headers, emails, and certificates |
+| **Logo** | Your company logo (displayed in navigation and login) |
+| **Logo Icon** | Compact icon version for mobile and small spaces |
+| **Support Email** | Shown in help sections and error pages |
+| **Support URL** | Link to your own help desk or documentation |
+
+## Theme Customization
+
+Apply your brand colors across the entire interface:
+
+- **Primary Color** — Buttons, links, and accent elements
+- **Secondary Color** — Supporting UI elements
+- **Custom CSS** — Advanced styling for pixel-perfect control
+
+## Hiding Wovser.AI Branding
+
+Enterprise customers can optionally:
+- **Hide "Powered by Wovser.AI"** — Remove the attribution footer
+- **Hide Wovser branding** — Remove all Wovser.AI references from the interface
+
+## Legal Links
+
+Add your own legal documents:
+- **Privacy Policy URL** — Link to your organization's privacy policy
+- **Terms of Service URL** — Link to your terms of service
+
+These replace the default Wovser.AI legal links throughout the platform.
+
+## Tips
+
+- **Set up early** — Custom domains take time to propagate, so configure this before launching assessments
+- **Test thoroughly** — Verify all links work correctly with your custom domain
+- **Upload high-quality logos** — Use SVG or high-resolution PNG for crisp display on all devices
+- **Match your brand guide** — Use your exact brand colors for a seamless experience

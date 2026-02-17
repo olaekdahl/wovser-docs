@@ -15,6 +15,8 @@ AI is integrated into multiple areas of the platform:
 <Cards>
   <Card title="Content Generation" href="#content-generation" />
   <Card title="Code Evaluation" href="#code-evaluation" />
+  <Card title="Course Generation" href="#course-generation" />
+  <Card title="Video Analysis" href="#video-analysis" />
   <Card title="Learning Analytics" href="#learning-analytics" />
   <Card title="Proctoring" href="#proctoring" />
 </Cards>
@@ -108,7 +110,72 @@ During live coding sessions, AI analyzes the progression of a candidate's work:
 - Code evolution over time
 - Problem-solving patterns
 
+The analysis produces a comprehensive report including:
+
+| Metric | Description |
+|--------|-------------|
+| **Verdict** | Overall assessment: skilled, learning, struggling, random, or suspicious |
+| **Debugging Patterns** | How the candidate identifies and resolves errors |
+| **Test Awareness** | Whether they write or consider test cases |
+| **Code Quality Progression** | How code improves across iterations |
+| **Behavioral Metrics** | Paste events, tab switches, idle time |
+| **Red Flags** | Suspicious patterns like bulk paste with no iteration |
+| **Recommendations** | Actionable feedback for the candidate |
+
 This provides insights beyond just the final submission.
+
+---
+
+## Course Generation
+
+### Course Wizard
+
+**Where:** Project → Course Wizard
+
+**Plan Required:** Pro or higher
+
+The Course Wizard analyzes uploaded training materials and generates complete assessment suites. Upload PDFs, documents, or paste text, and AI creates:
+
+- **Quizzes** — Chapter-level knowledge checks
+- **Assessments** — Comprehensive skill evaluations
+- **Code Challenges** — Programming tasks derived from course labs and exercises
+- **Video Assessments** — Oral evaluation questions based on course objectives
+
+Configurable options:
+- **Purpose** — Hiring, training, certification, academic, or enablement
+- **Assessment Strategy** — Pre-assessment, chapter quiz, mid-checkpoint, post-assessment
+- **Difficulty Distribution** — Percentage of Easy, Medium, and Hard questions
+- **Target Roles** — Job roles the assessments are designed for
+- **Transform Labs** — Convert hands-on exercises into code challenges
+
+All generated content is created as drafts for host review before publishing.
+
+---
+
+## Video Analysis
+
+### AI Speech-to-Text Transcription
+
+**Where:** Video assessment submissions
+
+When a learner submits a video response, AI automatically:
+1. **Transcribes** the audio using OpenAI Whisper speech-to-text
+2. **Matches keywords** in the transcript against host-defined keywords and synonyms
+3. **Calculates scores** per keyword category based on matched keyword weights
+4. **Analyzes speaking patterns** — pace (words per minute), pause count, filler words, sentiment
+
+### Speaking Analytics
+
+| Metric | Description |
+|--------|-------------|
+| **Speaking Pace** | Words per minute — flagged if too fast or too slow |
+| **Pause Count** | Number of significant pauses during the response |
+| **Filler Words** | Count of "um", "uh", "like", "you know", etc. |
+| **Sentiment** | Overall tone analysis of the response |
+
+<Callout type="info">
+  Video processing typically takes 30–60 seconds per response. The system processes videos asynchronously using a queue-based pipeline.
+</Callout>
 
 ---
 
@@ -168,6 +235,8 @@ AI analyzes video frames during proctored sessions to detect:
 | Quiz Generation | ✓ | ✓ | ✓ | ✓ |
 | Code Review (Basic) | ✓ | ✓ | ✓ | ✓ |
 | Code Challenge Generation | ✓ | ✓ | ✓ | ✓ |
+| Video Transcription & Scoring | — | ✓ | ✓ | ✓ |
+| Course Wizard | — | ✓ | ✓ | ✓ |
 | Code Progression Analysis | — | ✓ | ✓ | ✓ |
 | AI Question Generator | — | — | ✓ | ✓ |
 | AI Code Review Agent | — | — | ✓ | ✓ |

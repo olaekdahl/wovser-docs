@@ -1,0 +1,64 @@
+# HR & ATS Integrations
+
+Connect Wovser.AI with your HR and applicant tracking systems for seamless hiring workflows.
+
+import { Callout } from 'nextra/components'
+
+<Callout type="info">
+  HR and ATS integrations are available on the **Enterprise** plan and above.
+</Callout>
+
+## Overview
+
+Integrate Wovser.AI into your existing hiring pipeline by connecting with popular HR and ATS platforms. Assessment results, scores, and candidate reports flow directly into the systems your hiring team already uses.
+
+## Supported Platforms
+
+### Workday
+- Import candidate profiles from Workday
+- Push assessment scores and results back to candidate records
+- Sync hiring pipeline stages
+
+### BambooHR
+- Pull employee and candidate data
+- Report assessment completions for training compliance
+- Automated skill tracking
+
+### Greenhouse
+- Trigger assessments from Greenhouse pipeline stages
+- Assessment scores appear in the candidate's Greenhouse scorecard
+- Custom integration fields for mapping data
+
+### Lever
+- Send assessment invitations from Lever
+- Results sync back to the candidate profile
+- Pipeline stage automation based on pass/fail
+
+## How Integration Works
+
+1. Navigate to **Organization Settings → Integrations**
+2. Select your HR/ATS platform
+3. Authenticate with your platform credentials (OAuth)
+4. Configure field mappings (which data syncs where)
+5. Choose trigger events (when to send assessments, when to sync results)
+
+## Common Workflows
+
+### Automated Screening
+1. Candidate applies via your ATS
+2. ATS triggers a Wovser.AI assessment invitation
+3. Candidate completes the assessment
+4. Score and report sync back to the ATS
+5. Hiring team reviews results alongside the application
+
+### Training Compliance
+1. New hire is onboarded in your HR system
+2. Required training assessments are automatically assigned
+3. Completion and scores are reported back
+4. Compliance dashboards in your HR system stay current
+
+## Tips
+
+- **Map fields carefully** — Ensure candidate identifiers match between systems
+- **Test the flow** — Run a test candidate through the full pipeline before going live
+- **Use webhooks as backup** — If your ATS isn't directly supported, use webhooks for custom integration

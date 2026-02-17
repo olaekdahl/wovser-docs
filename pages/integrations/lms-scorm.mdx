@@ -1,0 +1,64 @@
+# SCORM Export
+
+Export assessments as SCORM packages for use in any SCORM-compatible LMS.
+
+import { Callout } from 'nextra/components'
+
+## Overview
+
+SCORM (Shareable Content Object Reference Model) is an industry standard for e-learning content. Wovser.AI supports exporting assessments as SCORM packages that can be imported into virtually any LMS — including platforms that don't support LTI.
+
+## How It Works
+
+1. Open the assessment you want to export
+2. Click **Export → SCORM Package**
+3. Choose the SCORM version:
+   - **SCORM 1.2** — Maximum compatibility with older LMS platforms
+   - **SCORM 2004** — More features including sequencing and navigation
+4. Download the `.zip` package
+5. Import into your LMS
+
+## What's Included
+
+The SCORM package contains:
+- The complete assessment with all questions
+- A lightweight player that connects back to Wovser.AI for execution
+- Score reporting back to the LMS gradebook
+- Completion status tracking
+
+<Callout type="info">
+  SCORM packages launch the assessment through Wovser.AI's platform, so learners still get the full experience — including code challenges, video responses, and AI features.
+</Callout>
+
+## LMS Compatibility
+
+SCORM export works with:
+- **Moodle** (all versions)
+- **Canvas** (SCORM add-on required)
+- **Blackboard**
+- **D2L Brightspace**
+- **Cornerstone OnDemand**
+- **SAP SuccessFactors**
+- **TalentLMS**
+- Any SCORM 1.2 or 2004 compliant LMS
+
+## Grade Passback
+
+When a learner completes a SCORM-launched assessment:
+- The score is reported back to the LMS via SCORM's scoring API
+- Completion status (passed/failed/completed) is updated in the LMS gradebook
+- The LMS records the time spent
+
+## When to Use SCORM vs LTI
+
+| Criteria | SCORM | LTI |
+|----------|-------|-----|
+| LMS supports it | Nearly all | Canvas, Moodle, Blackboard |
+| Setup complexity | Download and upload a file | OAuth configuration |
+| Score sync | Basic (score + completion) | Rich (full grade passback) |
+| Real-time features | Limited | Full |
+| Best for | Wide LMS compatibility | Deep LMS integration |
+
+<Callout type="info">
+  If your LMS supports LTI 1.3, we recommend using [LTI integration](/integrations) instead of SCORM for the richest experience. Use SCORM when LTI isn't available.
+</Callout>

@@ -1,0 +1,76 @@
+# Question Bank
+
+Build a reusable library of questions organized by category, difficulty, and tags.
+
+import { Callout, Steps } from 'nextra/components'
+
+## Overview
+
+The Question Bank is a centralized library where your organization's questions live. Instead of creating questions from scratch for every assessment, build a bank of high-quality questions and pull them into any quiz or assessment as needed.
+
+## Key Benefits
+
+- **Reusability** — Use the same question across multiple assessments
+- **Consistency** — Maintain quality standards across your organization
+- **Efficiency** — Build once, use everywhere
+- **Organization** — Categorize and tag for easy discovery
+- **Collaboration** — Team members can contribute questions to a shared pool
+
+## Categories
+
+Organize questions into categories to keep your bank manageable:
+
+- **Category Name** — e.g., "JavaScript Fundamentals", "System Design", "Communication Skills"
+- **Color** — Visual identifier for quick scanning
+- **Icon** — Optional icon for the category
+- **Sort Order** — Control how categories appear in lists
+
+<Steps>
+
+### Create a Category
+
+Navigate to **Question Bank → Categories** and click **New Category**. Give it a name, choose a color, and optionally add an icon.
+
+### Add Questions
+
+From a category, click **Add Question** to create a new question:
+
+- **Question text** — The prompt shown to participants
+- **Question type** — Multiple choice, true/false, short answer, etc.
+- **Difficulty** — Easy, Medium, or Hard
+- **Tags** — Free-form labels for filtering (e.g., "arrays", "sorting", "intermediate")
+- **Answers** — Define correct and incorrect options with explanations
+
+### Use in Assessments
+
+When creating a quiz or assessment, click **Add from Bank** to browse and select questions from your library.
+
+</Steps>
+
+<Callout type="info">
+  Questions in the bank are shared across your entire organization. Any team member with content creation permissions can contribute.
+</Callout>
+
+## AI Question Generation
+
+Use the **AI Generate** button within the Question Bank to automatically create questions:
+
+- Describe a topic or paste content
+- Set target difficulty and Bloom's Taxonomy level
+- AI generates questions with answers, distractors, and explanations
+- Review and add to your bank in one click
+
+## Difficulty Levels
+
+| Level | Description | Typical Use |
+|-------|-------------|-------------|
+| **Easy** | Recall and basic understanding | Warm-up questions, knowledge checks |
+| **Medium** | Application and analysis | Core assessment questions |
+| **Hard** | Synthesis and evaluation | Differentiating top performers |
+
+## Tips
+
+- **Tag consistently** — Use a standard set of tags across your team for better filtering
+- **Review regularly** — Update questions that have low discrimination indices (they don't differentiate skill levels)
+- **Mix sources** — Combine AI-generated and manually-written questions for the best quality
+- **Track usage** — See which questions are used most and which need refreshing

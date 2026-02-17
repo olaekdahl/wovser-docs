@@ -1,0 +1,98 @@
+# Webhooks
+
+Receive real-time notifications when events happen in Wovser.AI.
+
+import { Callout } from 'nextra/components'
+
+## Overview
+
+Webhooks let you build custom integrations by receiving HTTP POST requests whenever specific events occur in your Wovser.AI organization. Use webhooks to sync data with your own systems, trigger workflows, or build custom dashboards.
+
+## How It Works
+
+1. Register a webhook endpoint URL in your organization settings
+2. Select which events you want to receive
+3. Wovser.AI sends an HTTP POST to your URL with event data whenever a matching event occurs
+4. Your server processes the event and returns a 200 status
+
+<Callout type="info">
+  Webhook payloads are sent as JSON. Each request includes a signature header for verification.
+</Callout>
+
+## Available Events
+
+### Assessment Events
+| Event | Triggered When |
+|-------|---------------|
+| `assessment.completed` | A learner submits an assessment |
+| `assessment.graded` | An assessment is scored (auto or manual) |
+| `assessment.passed` | A learner meets the passing threshold |
+| `assessment.failed` | A learner does not meet the passing threshold |
+
+### Quiz Events
+| Event | Triggered When |
+|-------|---------------|
+| `quiz.session.started` | A live quiz session begins |
+| `quiz.session.completed` | A live quiz session ends |
+| `quiz.attempt.completed` | A player finishes a quiz |
+
+### Code Challenge Events
+| Event | Triggered When |
+|-------|---------------|
+| `challenge.submitted` | A code challenge submission is received |
+| `challenge.reviewed` | AI or manual code review is completed |
+
+### Video Assessment Events
+| Event | Triggered When |
+|-------|---------------|
+| `video.submitted` | A video response is recorded and uploaded |
+| `video.transcribed` | AI transcription and scoring is complete |
+
+### Learner Events
+| Event | Triggered When |
+|-------|---------------|
+| `learner.invited` | A new learner is added to a project |
+| `learner.completed.all` | A learner finishes all assigned content |
+
+### Certificate Events
+| Event | Triggered When |
+|-------|---------------|
+| `certificate.awarded` | A certificate is issued to a learner |
+
+## Payload Format
+
+```json
+{
+  "event": "assessment.completed",
+  "timestamp": "2026-02-16T10:30:00Z",
+  "data": {
+    "assessmentId": "clx...",
+    "assessmentTitle": "JavaScript Fundamentals",
+    "learnerId": "clx...",
+    "learnerEmail": "jane@example.com",
+    "score": 85,
+    "passed": true,
+    "duration": 1800
+  }
+}
+```
+
+## Security
+
+- Each webhook delivery includes an `X-Wovser-Signature` header
+- Verify the signature using your webhook secret to confirm the request came from Wovser.AI
+- Use HTTPS endpoints only
+
+## Retry Policy
+
+If your endpoint returns a non-2xx status code, Wovser.AI retries the delivery:
+- **3 attempts** with exponential backoff
+- Delays: 30 seconds, 5 minutes, 30 minutes
+- After 3 failures, the event is marked as failed
+
+## Tips
+
+- **Always verify signatures** — Prevent spoofed webhook calls
+- **Respond quickly** — Return 200 immediately and process asynchronously
+- **Handle duplicates** — Use the event ID to deduplicate in case of retries
+- **Monitor failures** — Check your webhook logs in the dashboard for delivery issues

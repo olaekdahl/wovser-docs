@@ -1,0 +1,88 @@
+# Course Wizard
+
+Generate complete assessment suites from uploaded course materials using AI.
+
+import { Callout, Steps } from 'nextra/components'
+
+## Overview
+
+The Course Wizard is an AI-powered tool that analyzes your training or educational materials and automatically generates a comprehensive set of assessments — including quizzes, skill assessments, code challenges, and video assessments — tailored to the content.
+
+Instead of manually creating dozens of questions, upload your course documents and let AI do the heavy lifting.
+
+## How It Works
+
+<Steps>
+
+### Upload Materials
+
+Provide your course content by uploading files (PDFs, documents) or pasting text. The AI will analyze the content to detect:
+
+- **Course title and modules**
+- **Learning objectives**
+- **Technologies and tools mentioned**
+- **Labs and hands-on exercises**
+
+### Configure Purpose
+
+Tell the wizard what the assessments are for:
+
+| Purpose | Description |
+|---------|-------------|
+| **Hiring** | Pre-screen candidates for role-specific knowledge |
+| **Training** | Evaluate employee learning progress |
+| **Certification** | Formal credentialing with pass/fail thresholds |
+| **Academic** | University or bootcamp coursework assessment |
+| **Enablement** | Product or process onboarding verification |
+
+### Set Assessment Strategy
+
+Choose which types of assessments to generate and how they map to your course structure:
+
+- **Pre-Assessment** — Baseline knowledge check before the course begins
+- **Chapter Quiz** — Quick quiz after each module or chapter
+- **Mid-Checkpoint** — Comprehensive check at the halfway mark
+- **Post-Assessment** — Final evaluation after course completion
+
+### Configure Counts and Difficulty
+
+Fine-tune the output:
+
+- **Fixed counts** — Set exactly how many quizzes (0–20), assessments (0–10), code challenges (0–10), and video assessments (0–10) to generate
+- **Difficulty distribution** — Control the mix of Easy, Medium, and Hard questions
+- **Skill level** — Target the content for beginners, intermediate, or advanced learners
+- **Target roles** — Specify job roles the assessments are designed for
+
+### Advanced Options
+
+- **Stay within content** — Only generate questions from the uploaded materials (no external knowledge)
+- **Transform labs** — Convert hands-on lab exercises into code challenges
+- **Include code challenges** — Enable/disable programming tasks
+
+### Generate
+
+Click **Generate** and the AI creates all assessments within the selected project. Each assessment is created as a draft so you can review and edit before publishing.
+
+</Steps>
+
+<Callout type="info">
+  The Course Wizard creates all content as drafts. You can review, edit, reorder, or delete any generated assessments before making them available to learners.
+</Callout>
+
+## Example Use Cases
+
+### Corporate Training Program
+Upload a 10-module training manual → Generate pre/post assessments, chapter quizzes, and code challenges for each technology mentioned.
+
+### University Course
+Upload lecture slides and syllabus → Generate weekly quizzes, a midterm assessment, and a final exam with appropriate difficulty distribution.
+
+### Certification Program
+Upload the certification study guide → Generate practice tests with realistic question distribution matching the actual exam format.
+
+## Tips
+
+- **Provide comprehensive materials** — The more content you upload, the better the AI can generate relevant questions
+- **Review generated content** — AI is a starting point; always review and adjust questions for accuracy
+- **Use difficulty distribution** — A mix of 30% Easy / 50% Medium / 20% Hard works well for most training programs
+- **Iterate** — Run the wizard multiple times with different settings to get the best results

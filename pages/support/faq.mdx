@@ -19,10 +19,14 @@ Wovser.AI is a comprehensive skills assessment platform that enables organizatio
 
 ### What makes Wovser.AI different?
 
-- **AI-powered question generation** - Create assessments faster
-- **Live coding environments** - Real terminal access in the browser
-- **Enterprise integrations** - SSO, SCIM, LMS support
-- **Real-time competitions** - Engaging quiz experiences
+- **AI-powered question generation** — Create assessments faster
+- **Live coding environments** — Real terminal access in the browser for 17+ languages
+- **Video assessments** — AI-scored video responses with transcription and keyword matching
+- **Course Wizard** — Upload course materials and auto-generate full assessment suites
+- **Certificates & badges** — Professional credentials with LinkedIn sharing and QR verification
+- **Enterprise integrations** — SSO, SCIM, LMS, HR/ATS support
+- **Real-time competitions** — Engaging live quiz experiences
+- **Mobile app** — Full assessment experience on iOS and Android
 
 ## Account & Billing
 
@@ -32,11 +36,15 @@ Visit [app.wovser.ai](https://app.wovser.ai) and click Sign Up. You can register
 
 ### What plans are available?
 
-| Plan | Best For |
-|------|----------|
-| Free | Individual educators, small teams |
-| Pro | Growing organizations |
-| Enterprise | Large organizations, custom needs |
+| Plan | Price | Best For |
+|------|-------|----------|
+| Free | $0 | Individual educators, small teams |
+| Pro | $149/mo | Growing organizations |
+| Scale | $499/mo | Teams needing cloud code challenges and SSO |
+| Enterprise | $999/mo | Large organizations, white-label, HR integrations |
+| Ultimate | Custom | Unlimited usage, dedicated support |
+
+See [Pricing & Plans](/support/pricing) for full details.
 
 ### Can I upgrade or downgrade my plan?
 
@@ -62,7 +70,7 @@ We support the latest versions of:
 
 ### Does Wovser.AI work on mobile devices?
 
-Yes, quizzes and assessments work on mobile devices. However, for code challenges, we recommend using a device with a full keyboard.
+Yes, quizzes and assessments work on mobile browsers. We also have a dedicated **mobile app** for iOS and Android that supports quiz taking, live sessions, push notifications, and video recording. For code challenges, we recommend using a device with a full keyboard.
 
 ### What programming languages are supported for code challenges?
 
@@ -147,3 +155,37 @@ Yes, we support:
 ### Is there an API?
 
 Yes! Our REST API provides full platform access. See the [API Reference](/api-reference) for documentation.
+
+## Video Assessments
+
+### What are video assessments?
+
+Video assessments let you ask questions that learners answer by recording short video responses. Each response is automatically transcribed using AI speech-to-text, analyzed for keyword matches, and scored based on criteria you define. See [Video Assessments (Hosts)](/hosts/video-assessments) for details.
+
+### How is video scoring done?
+
+The AI transcribes the response using speech-to-text (OpenAI Whisper), then matches keywords and synonyms in the transcript against the keywords you defined. Each keyword has a weight, and the overall score is the weighted average across all keyword categories. Critical keywords must be mentioned to pass.
+
+### What about video quality and bandwidth?
+
+Video recording works in any modern browser with camera/microphone access. Videos are uploaded to cloud storage and processed asynchronously. A stable internet connection is recommended, especially for longer recordings.
+
+## Certificates & Badges
+
+### Can learners earn certificates?
+
+Yes! Hosts can create custom certificate templates with their organization's branding. When learners pass an assessment, they automatically receive a certificate they can download as PDF or share on LinkedIn.
+
+### How does certificate verification work?
+
+Each certificate includes a unique verification URL and QR code. Anyone can verify the certificate's authenticity by visiting the link or scanning the code.
+
+## GDPR & Privacy
+
+### Can I export my data?
+
+Yes. Navigate to **Account Settings → Privacy → Export My Data** to download a complete archive of your personal data in JSON format, including all submissions, scores, and certificates.
+
+### Can I delete my account?
+
+Yes. Go to **Account Settings → Privacy → Delete Account**. This permanently removes all your data. You must type "DELETE MY ACCOUNT" to confirm. See [GDPR & Data Rights](/support/gdpr) for full details.

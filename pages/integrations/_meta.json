@@ -2,6 +2,8 @@
   "index": "Overview",
   "canvas-lms": "Canvas LMS",
   "moodle": "Moodle",
+  "lms-scorm": "SCORM Export",
+  "hr-ats": "HR & ATS",
   "sso-saml": "SSO (SAML)",
   "sso-oidc": "SSO (OIDC)",
   "scim": "SCIM Provisioning",
