@@ -6,8 +6,9 @@
   "---": {
     "type": "separator"
   },
-  "hosts": "For Hosts",
-  "players": "For Players",
+  "creating": "Creating Content",
+  "taking": "Taking Assessments",
+  "managing": "Managing",
   "----": {
     "type": "separator"
   },
